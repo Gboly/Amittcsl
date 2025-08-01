@@ -1,9 +1,23 @@
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff;
   --foreground: #171717;
-    --gray-rgb: 0, 0, 0;
+  --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05); */
+
+  --color-1: #ffbf00;
+  --color-2: #f07f21;
+  --banner-color: #517e92;
+  --success-color: #4bb543;
+  --h1: 3rem;
+  --h2: 2.5rem;
+  --h3: 2rem;
+  --h4: 1.4rem;
+  --p1: 1.3rem;
+  --p2: 1.1rem;
+  --p3: 1.05rem;
+  --p4: 1rem;
+  --i1: 2rem;
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
@@ -18,6 +32,7 @@
 
 html,
 body {
+  width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
 }

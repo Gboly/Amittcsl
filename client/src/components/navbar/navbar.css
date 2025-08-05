@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  font-family: var(--font-1);
 }
 
 .nav-left img {
@@ -36,4 +37,5 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: #222;
 }

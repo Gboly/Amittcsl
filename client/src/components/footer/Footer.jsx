@@ -29,9 +29,10 @@ export default function Footer() {
             <h3>Amitt Training & Consulting Services Limited</h3>
           </header>
           <p>
-            We help startups secure venture capital by handling the outreach
-            process professionally, allowing founders to focus on growth and
-            product.
+            We provide training, consulting, and advisory services that empower
+            individuals, startups, and organizations to grow. From financial
+            literacy and customer service to startup funding and personal
+            development, we deliver practical solutions for lasting impact.
           </p>
         </section>
 

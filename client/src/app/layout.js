@@ -1,17 +1,40 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  IBM_Plex_Sans,
+  Libertinus_Math,
+  Montserrat,
+  Raleway,
+  Roboto,
+} from "next/font/google";
 import "./globals.css";
 import Providers from "./Providers";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-1",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const libertinusMath = Libertinus_Math({
+  variable: "--font-2",
   subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
+
+const raleway = Raleway({
+  variable: "--font-body",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
+
+const ibmPlex = Montserrat({
+  subsets: ["latin"],
+  weight: ["700"], // bold
+  variable: "--font-hero",
+  display: "swap",
 });
 
 export const metadata = {
@@ -23,7 +46,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${roboto.variable} ${libertinusMath.variable} ${ibmPlex.variable} ${raleway.variable}`}
+      >
         <Providers>
           <Navbar />
           <main>{children}</main>

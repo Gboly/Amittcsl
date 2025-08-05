@@ -41,6 +41,9 @@ export const metadata = {
   title: "Amitt Training and Consulting Services Limited",
   description:
     "A training, consulting, and advisory firm that empowers individuals and organizations through financial literacy, professional development, and startup support",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

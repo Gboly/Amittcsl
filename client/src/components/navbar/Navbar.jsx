@@ -42,9 +42,9 @@ export default function Navbar() {
           <li>
             <Link href="/contact">Contact</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/faq">FAQ</Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Right: Menu icon */}

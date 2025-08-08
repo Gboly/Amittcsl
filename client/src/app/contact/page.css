@@ -1,0 +1,119 @@
+.contact {
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  background-color: #868686;
+}
+
+/* Intro Section */
+.contact .intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact .intro > img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  border-radius: 0.5rem;
+}
+
+.contact .intro > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .intro > div > div {
+  max-width: 500px;
+}
+
+.contact .intro header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact .intro p {
+  line-height: 1.7;
+}
+
+.contact .intro aside {
+  margin-top: 2rem;
+}
+
+.contact .intro aside div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact .intro aside a {
+  color: var(--primary-color, #256029);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Message Form */
+.message-form {
+  margin-top: 4rem;
+}
+
+.message-form h2 {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.message-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.message-form form > div {
+  flex: 1 1 calc(50% - 1rem);
+  min-width: 250px;
+}
+
+.message-form .submit {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.message-form .submit button {
+  background-color: var(--primary-color, #256029);
+  color: white;
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.message-form .submit button:hover {
+  background-color: #1f4d22;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contact .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact .intro aside div {
+    justify-content: center;
+  }
+
+  .message-form form > div {
+    flex: 1 1 100%;
+  }
+}

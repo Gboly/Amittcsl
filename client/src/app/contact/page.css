@@ -1,62 +1,90 @@
 .contact {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 0 2rem 4rem;
   box-sizing: border-box;
   background-color: #868686;
 }
 
-/* Intro Section */
 .contact .intro {
+  width: 100%;
+  min-height: 60vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-
-.contact .intro > img {
-  flex: 1;
-  min-width: 280px;
-  max-width: 500px;
-  border-radius: 0.5rem;
-}
-
-.contact .intro > div {
-  flex: 1;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  /* background-image: url("/contact-abstract.png");
+  background-size: cover;
+  background-position: center; */
+  padding: 4rem 2rem;
 }
 
-.contact .intro > div > div {
-  max-width: 500px;
+.intro-content {
+  max-width: 65rem;
+  width: 100%;
+  color: white;
 }
 
 .contact .intro header {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .contact .intro p {
-  line-height: 1.7;
+  line-height: 2;
 }
 
-.contact .intro aside {
-  margin-top: 2rem;
-}
-
-.contact .intro aside div {
+.contact-info {
+  width: 100%;
+  justify-content: center;
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
 }
 
-.contact .intro aside a {
-  color: var(--primary-color, #256029);
-  text-decoration: underline;
-  font-weight: 500;
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 180px;
+  width: 15rem;
+  align-items: center; /* Center icons and text horizontally */
+  text-align: center; /* Ensure text is centered under icon */
 }
+
+.contact-column svg {
+  margin-bottom: 0.5rem;
+}
+
+.contact-column p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.contact-images {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.contact-images img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+
+
 
 /* Message Form */
 .message-form {
@@ -65,7 +93,7 @@
 
 .message-form h2 {
   font-size: 1.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4.5rem;
   text-align: center;
 }
 
@@ -88,7 +116,7 @@
 }
 
 .message-form .submit button {
-  background-color: var(--primary-color, #256029);
+  background-color: #f85c70;
   color: white;
   border: none;
   padding: 0.6rem 2rem;

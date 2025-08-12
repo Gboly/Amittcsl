@@ -12,7 +12,7 @@ export default function Navbar() {
   const [activeSidebar, setActiveSidebar] = useState(null);
 
   const handleMenuClick = () => {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 561;
     setActiveSidebar(isMobile ? "mobile" : "large");
   };
 

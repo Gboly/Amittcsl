@@ -39,3 +39,9 @@
   cursor: pointer;
   color: #222;
 }
+
+@media (max-width: 560px) {
+ .nav-links {
+    display: none;
+  }
+}

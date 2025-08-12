@@ -13,9 +13,11 @@
   padding: 1.5rem;
   backdrop-filter: blur(50px);
   color: white;
-  width: calc(50% - 1rem);
-  max-width: 65rem;
-  min-width: 30rem;
+  /* width: calc(50% - 1rem); */
+  width: 100%;
+  max-width: 100%;
+  min-width: 25rem;
+  flex: 1 1 calc(50% - 1rem);
 }
 
 .service-card:hover {
@@ -59,4 +61,16 @@
 
 .read-more:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .service-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-card {
+    min-width: 100%;
+  }
 }

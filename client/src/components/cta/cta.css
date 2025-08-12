@@ -17,3 +17,9 @@
 .cta-button:hover {
   background-color: #333;
 }
+
+@media (max-width: 960px) {
+  .cta-button {
+  font-size: .9rem;
+}
+}

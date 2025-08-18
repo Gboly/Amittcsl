@@ -1,0 +1,233 @@
+.travel-page {
+  font-family: var(--font-body);
+  color: #111;
+  /* background-color: #f8f1f2; */
+}
+
+/* Hero */
+.travel-hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-img {
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 700px;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: white;
+  color: #0f172a;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Who section */
+.travel-who {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.who-card {
+  text-align: center;
+}
+
+.who-card svg {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.who-card h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* What's Included */
+ .travel-included  {
+width: 100%;
+background-color: #f8f1f2;
+ }
+.travel-included > div {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.included-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.included-img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.included-list {
+  list-style: none;
+  padding: 0;
+}
+
+.included-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.included-list small {
+  display: block;
+  margin-top: 1rem;
+  color: #555;
+}
+
+/* Itinerary & Why Travel */
+.travel-itinerary {
+    width: 100%;
+background-color: #f8f1f2;
+}
+.travel-itinerary > div {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.itinerary-left, .itinerary-right {
+  flex: 1 1 350px;
+}
+
+.itinerary-list {
+  list-style: none;
+  padding: 0;
+}
+
+.itinerary-list li {
+  margin-bottom: 1rem;
+}
+
+.itinerary-list span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.why-travel {
+  margin-top: 2rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.why-grid div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/* Testimonials */
+.travel-testimonials {
+  padding: 4rem 2rem;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.testimonial-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-icon.male {
+  color: #1976d2; /* blue tone */
+}
+
+.testimonial-icon.female {
+  color: #e91e63; /* pink tone */
+}
+
+
+.testimonial-author {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}

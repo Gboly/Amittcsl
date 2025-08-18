@@ -1,0 +1,87 @@
+.fee-page {
+  padding: 2rem;
+  font-family: var(--font-body);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* Why Section */
+.fee-why {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stats h3 {
+  font-size: 2.5rem;
+  color: #1E3A8A;
+  margin-bottom: 0.5rem;
+}
+
+/* Benefits */
+.fee-benefits {
+  margin-top: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.benefit-card svg {
+  font-size: 2rem;
+  color: #3B82F6;
+  margin-bottom: 0.5rem;
+}
+
+/* Outcomes */
+.fee-outcomes {
+  margin-top: 3rem;
+}
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.outcomes-grid div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Delivery Format */
+.fee-delivery {
+  margin-top: 3rem;
+}
+
+.delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.delivery-grid div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

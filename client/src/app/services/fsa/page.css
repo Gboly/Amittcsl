@@ -1,0 +1,132 @@
+.fsa-page {
+  font-family: var(--font-body);
+}
+
+/* Hero Section */
+.fsa-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1E56A0;
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-icon img {
+  max-width: 120px;
+}
+
+/* About Section */
+.fsa-about {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Who Section */
+.fsa-who {
+  padding: 2rem;
+  text-align: center;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.who-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.who-grid svg {
+  font-size: 2rem;
+  color: #1E56A0;
+  margin-bottom: 0.5rem;
+}
+
+/* Topics Section */
+.fsa-topics {
+  padding: 3rem 2rem;
+}
+
+.topics-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.topics-layout ul {
+  flex: 2;
+  list-style: none;
+  padding: 0;
+}
+
+.topics-layout ul li {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.topics-layout ul li::before {
+  content: '+';
+  color: #1E56A0;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.topic-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topic-card {
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 0.5rem;
+}
+
+.full-btn {
+  margin-top: 2rem;
+}

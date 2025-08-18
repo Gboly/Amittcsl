@@ -6,7 +6,7 @@
 
 .about-hero-banner {
   width: 75vw;
-  height: 30vh; 
+  height: 30vh;
   margin: 0 auto 1rem;
   border-radius: 1rem;
   border: 1px solid #ff7954;
@@ -106,6 +106,7 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,4 +151,67 @@
   line-height: 1.6;
   text-align: center;
   padding: 2rem;
+}
+
+
+@media (max-width: 960px) {
+  .about-hero-banner {
+    width: calc(100vw - 2rem);
+  }
+  .about-hero-banner h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-hero-banner {
+   height: 23vh;
+  }
+   .about-hero-banner h1 {
+    font-family: var(--font-hero);
+  }
+  .about-hero-text {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-hero-banner {
+    height: 20vh;
+  }
+  .about-hero-banner h1 {
+    font-size: 2.2rem;
+  }
+    .card-inner {
+    transform: none !important;
+  }
+
+  /* Stack both faces and fade toggle */
+  .card-front, .card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  /* Hide back by default */
+  .card-back {
+    display: none;
+  }
+
+  .principle-card {
+    border: none;
+  }
+  .principles-section {
+    padding: 4rem 1rem;
+  }
+  /* On hover/tap, show back instead of front */
+  .principle-card:hover .card-front {
+    display: none;
+  }
+  .principle-card:hover .card-back {
+    display: flex;
+  }
 }

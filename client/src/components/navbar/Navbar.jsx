@@ -23,8 +23,20 @@ export default function Navbar() {
       <nav className="navbar">
         {/* Left: Logo */}
         <div className="nav-left">
-          <Link href="/">
-            <Image src="/amitt-logo.png" alt="Logo" width={40} height={40} />
+          <Link href="/" className="brand">
+            <Image
+              src="/amitt-logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="brand-logo"
+            />
+            <div className="brand-text">
+              <div className="brand-name">AMITT</div>
+              <div className="brand-sub">
+                Training and Consulting Services Limited
+              </div>
+            </div>
           </Link>
         </div>
 

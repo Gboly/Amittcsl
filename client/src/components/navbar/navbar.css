@@ -15,6 +15,45 @@
   cursor: pointer;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 100%;
+  width: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-family: var(--font-hero);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00bca1; /* main highlight */
+}
+
+.brand-sub {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #555;
+}
+
+/* Responsive: Hide long text on small screens */
+@media (max-width: 960px) {
+  .brand-text {
+    display: none;
+  }
+}
+
+
 .nav-links {
   display: flex;
   gap: 1.5rem;

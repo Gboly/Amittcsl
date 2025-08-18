@@ -26,7 +26,7 @@ export default function SidebarLarge({ onClose }) {
         {/* Brand below the close icon */}
         <div className="sidebar-brand-full">
           <h1>
-            <span className="brand-main">Amitt</span>{" "}
+            <span className="brand-main">AMITT</span>
             <span className="brand-sub">
               Training and Consulting Services Limited
             </span>
@@ -36,11 +36,11 @@ export default function SidebarLarge({ onClose }) {
         <div className="sidebar-content">
           <div className="sidebar-contact">
             <EmailIcon />
-            <span>contact@amittconsulting.com</span>
+            <span>info@amittcsl.com</span>
           </div>
           <div className="sidebar-contact">
             <PhoneIcon />
-            <span>+234 801 234 5678</span>
+            <span>+234 904 612 6671</span>
           </div>
 
           <div className="sidebar-message">

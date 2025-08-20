@@ -14,11 +14,11 @@ export const services = [
     link: "/services/fee",
   },
   {
-    title: "Customer Service Training",
+    title: "Stock and Shares Management",
     image:
       "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088970/Amitt/cst_tcxeit.png",
-    desc: "A professional development program for individuals and corporate teams, designed to build communication skills, enhance customer interactions, and foster service excellence that drives loyalty and business growth.",
-    link: "/services/cst",
+    desc: "Stocks and Shares Management provides guidance and strategies for building and managing investment portfolios. We help you navigate the stock market with confidence, make informed decisions, and maximize returns while minimizing risks.",
+    link: "/services/ssm",
   },
   {
     title: "Travel and Tours",

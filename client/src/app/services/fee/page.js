@@ -15,10 +15,32 @@ import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import LanguageIcon from "@mui/icons-material/Language";
 import EventIcon from "@mui/icons-material/Event";
 import AssignmentIcon from "@mui/icons-material/Assignment";
+import { Button } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 
 export default function Page() {
   return (
     <main className="fee-page">
+      {/* (1) HERO */}
+      <section className="fee-hero">
+        <div className="hero-inner">
+          <h1>Empower Your Team with Financial Confidence</h1>
+          <p>
+            An online course designed to reduce financial stress, boost
+            productivity, and build lasting financial resilience.
+          </p>
+          <nav className="hero-actions" aria-label="Primary actions">
+            <Button variant="contained" color="primary" className="btn-lg">
+              Enroll Your Team
+            </Button>
+            {/* <Button variant="outlined" className="btn-lg btn-outline-light">
+              Request a Demo
+            </Button> */}
+          </nav>
+        </div>
+      </section>
+
       {/* Why This Course Matters */}
       <section className="fee-why">
         <div className="why-text">
@@ -29,7 +51,7 @@ export default function Page() {
               <p>of employees say financial stress affects performance</p>
             </div>
             <div>
-              <h3>twic</h3>
+              <h3>2x</h3>
               <p>as likely to leave their jobs</p>
             </div>
           </div>
@@ -104,6 +126,67 @@ export default function Page() {
           <div>
             <AssignmentIcon /> Tools & Templates
           </div>
+        </div>
+      </section>
+
+      {/* (6) TESTIMONIALS & CASE STUDIES */}
+      <section className="fee-testimonials">
+        <h2>Testimonials & Case Studies</h2>
+        <div className="testimonials-grid">
+          {/* Employer testimonial */}
+          <article className="testimonial-card">
+            <header className="testimonial-head">
+              <AccountCircleIcon sx={{ fontSize: 36, color: "#1E3A8A" }} />
+              <span className="role-badge">Employer</span>
+            </header>
+            <div className="quote-row">
+              <FormatQuoteIcon className="quote-icon" />
+              <blockquote>
+                “Within a month, absenteeism dropped and team focus improved.
+                This course paid for itself in productivity.”
+              </blockquote>
+            </div>
+          </article>
+
+          {/* Employee testimonial */}
+          <article className="testimonial-card">
+            <header className="testimonial-head">
+              <AccountCircleIcon sx={{ fontSize: 36, color: "#1E3A8A" }} />
+              <span className="role-badge">Employee</span>
+            </header>
+            <div className="quote-row">
+              <FormatQuoteIcon className="quote-icon" />
+              <blockquote>
+                “I built my first real budget and finally started an emergency
+                fund. I feel in control.”
+              </blockquote>
+            </div>
+            <div className="star-row" aria-label="5 out of 5 stars">
+              <StarIcon />
+              <StarIcon />
+              <StarIcon />
+              <StarIcon />
+              <StarIcon />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* (7) FINAL CTA FOR HR */}
+      <section className="fee-cta-final">
+        <div className="cta-inner">
+          <h2>
+            Transform your team’s financial health and boost workplace
+            productivity.
+          </h2>
+          <nav className="cta-actions" aria-label="Final calls to action">
+            <Button variant="contained" color="secondary" className="btn-lg">
+              Schedule a Consultation
+            </Button>
+            <Button variant="outlined" className="btn-lg btn-outline-light">
+              Request Pricing
+            </Button>
+          </nav>
         </div>
       </section>
     </main>

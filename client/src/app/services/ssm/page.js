@@ -12,6 +12,8 @@ import DataUsageIcon from "@mui/icons-material/DataUsage";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import PeopleIcon from "@mui/icons-material/People";
 import CommentIcon from "@mui/icons-material/Comment";
+import PersonIcon from "@mui/icons-material/Person";
+import WomanIcon from "@mui/icons-material/Woman";
 
 export default function StockSharesPage() {
   return (
@@ -33,8 +35,8 @@ export default function StockSharesPage() {
           <h1>Take Control of Your Investments</h1>
           <p>Expert stock & shares management tailored to your goals.</p>
           <div className="hero-buttons">
-            <button className="btn-primary">Get Started</button>
-            <button className="btn-secondary">Book Consultation</button>
+            {/* <button className="btn-primary">Get Started</button> */}
+            <button className="btn-primary">Book Consultation</button>
           </div>
         </div>
       </section>
@@ -141,7 +143,7 @@ export default function StockSharesPage() {
         </div>
       </section>
 
-      {/* ===================== Section 5: Client Success Stories ===================== */}
+      {/* ===================== Section 5: Client Success Stories =====================
       <section className="stocks-testimonials">
         <h2>Client Success Stories</h2>
         <div className="testimonial-grid">
@@ -163,6 +165,35 @@ export default function StockSharesPage() {
               “Their data-driven approach to stock management is impressive.”
             </p>
             <span className="testimonial-author">Client 3</span>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Testimonials */}
+      <section className="stocks-testimonials">
+        <h2>Testimonials</h2>
+        <div className="stocks-testimonial-grid">
+          <div className="stocks-testimonial-card">
+            <WomanIcon className="stocks-testimonial-icon female" />
+            <p>
+              “The stock management service has significantly improved my
+              investment returns.”
+            </p>
+            <span className="stocks-testimonial-author">Amina, UK</span>
+          </div>
+          <div className="stocks-testimonial-card">
+            <PersonIcon className="stocks-testimonial-icon male" />
+            <p>
+              “Professional and reliable. I trust their expertise and guidance.”
+            </p>
+            <span className="stocks-testimonial-author">David, USA</span>
+          </div>
+          <div className="stocks-testimonial-card">
+            <WomanIcon className="stocks-testimonial-icon female" />
+            <p>
+              “Their data-driven approach to stock management is impressive.”
+            </p>
+            <span className="stocks-testimonial-author">Tolu, Canada</span>
           </div>
         </div>
       </section>

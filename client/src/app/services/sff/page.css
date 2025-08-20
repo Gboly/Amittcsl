@@ -76,7 +76,23 @@
 .step h4 { margin: .25rem 0 .25rem; }
 .step p { color: var(--muted); font-size: .98rem; }
 .arrow { display: grid; place-items: center; color: var(--muted); font-size: 1.4rem; }
-.process-illustration { max-width: 1100px; margin: 1.5rem auto 0; border: 1px dashed var(--line); border-radius: 14px; overflow: hidden; }
+.process-illustration { 
+  /* max-width: 1100px;  */
+  width: 100%;
+  max-width: 1100px;
+  margin: 1.5rem auto 0; 
+  /* border: 1px dashed var(--line);  */
+  /* border-radius: 14px; */
+  /* overflow: hidden;  */
+  /* padding: 0; */
+}
+.process-illustration img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  line-height: 0;
+  border-radius: 14px;
+}
 
 @media (max-width: 1024px) {
   .process-flow { grid-template-columns: 1fr; }
@@ -104,6 +120,15 @@
 .kpi-track { width: 100%; height: 6px; background: #0b294f; border-radius: 999px; overflow: hidden; }
 .kpi-fill { height: 100%; background: var(--gold); }
 .kpi-footnote { color: var(--muted); font-size: .9rem; margin-top: .5rem; display: block; }
+.case-art {
+  width: 100%;
+}
+.case-art img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
 
 @media (max-width: 960px) {
   .funding-case { grid-template-columns: 1fr; }
@@ -129,3 +154,9 @@
 .funding-cta h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: .4rem; }
 .funding-cta p { color: var(--muted); margin-bottom: 1.2rem; }
 .cta-buttons { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+.cta-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .1rem;
+}

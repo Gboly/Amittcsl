@@ -33,9 +33,6 @@ export default function ProfessionalCourses() {
             <Button variant="contained" color="primary">
               Explore Courses
             </Button>
-            <Button variant="outlined" color="primary">
-              Get Started
-            </Button>
           </div>
         </div>
       </section>
@@ -54,9 +51,9 @@ export default function ProfessionalCourses() {
           <div className="learning-text">
             <h2>LEARNING THAT TRANSFORMS</h2>
             <ul>
-              <li>✔ Drives innovation & effectiveness</li>
-              <li>✔ Built for complex environments</li>
-              <li>✔ Scalable, high-quality delivery</li>
+              <li>✔ &nbsp;Drives innovation & effectiveness</li>
+              <li>✔ &nbsp;Built for complex environments</li>
+              <li>✔ &nbsp;Scalable, high-quality delivery</li>
             </ul>
             <Button variant="contained" color="primary">
               Explore Courses

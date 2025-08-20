@@ -3,6 +3,7 @@
 import Image from "next/image";
 import "./page.css";
 import { services, servicesParagraphs } from "@/utils/data";
+import Link from "next/link";
 
 export default function Services() {
   return (
@@ -51,7 +52,9 @@ export default function Services() {
               <div className="flip-card-back">
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <button>Discover More</button>
+                <Link href={service.link} className="service-link">
+                  <button>Discover More</button>
+                </Link>
               </div>
             </div>
           </div>

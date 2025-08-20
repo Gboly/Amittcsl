@@ -9,13 +9,14 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import ChildCareIcon from "@mui/icons-material/ChildCare";
 import CalculateIcon from "@mui/icons-material/Calculate";
-// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 export default function FSA() {
   return (
     <main className="fsa-page">
       {/* Hero Section */}
       <section className="fsa-hero">
+        <div className="hero-overlay" />
         <div className="hero-content">
           <h1>Grow & Preserve Your Wealth – The Practical Way</h1>
           <p>
@@ -26,18 +27,10 @@ export default function FSA() {
             <Button variant="contained" color="primary">
               Enroll Now
             </Button>
-            <Button variant="outlined" color="primary">
+            {/* <Button variant="outlined" color="primary">
               Download Curriculum
-            </Button>
+            </Button> */}
           </div>
-        </div>
-        <div className="hero-icon">
-          <Image
-            src="/hero-icon.png"
-            alt="Growth Icon"
-            width={120}
-            height={120}
-          />
         </div>
       </section>
 
@@ -57,43 +50,43 @@ export default function FSA() {
             alt="About FSA"
             width={1640}
             height={925}
-            style={{ width: "100%", height: "auto", borderRadius: "0.5rem" }}
+            style={{ width: "100%", height: "auto", borderRadius: "1rem" }}
           />
         </div>
       </section>
 
-      {/* Who is this Academy for */}
+      {/* Who Section */}
       <section className="fsa-who">
         <h2>Who is this Academy for?</h2>
         <div className="who-grid">
-          <div>
+          <div className="who-card">
             <SavingsIcon />
             <span>Future Wealthy Retiree</span>
           </div>
-          <div>
+          <div className="who-card">
             <AttachMoneyIcon />
             <span>Savvy Saver</span>
           </div>
-          <div>
+          <div className="who-card">
             <ShowChartIcon />
             <span>Intentional Investor</span>
           </div>
-          <div>
+          <div className="who-card">
             <EmojiEventsIcon />
             <span>Goal-Oriented</span>
           </div>
-          <div>
+          <div className="who-card">
             <ChildCareIcon />
             <span>Investor for Kids</span>
           </div>
-          <div>
+          <div className="who-card">
             <CalculateIcon />
             <span>Financial Planner</span>
           </div>
         </div>
       </section>
 
-      {/* Topics Covered */}
+      {/* Topics Section */}
       <section className="fsa-topics">
         <h2>Some Topics Covered in the Academy Curriculum</h2>
         <div className="topics-layout">
@@ -102,18 +95,104 @@ export default function FSA() {
             <li>Creating your personal income statement</li>
             <li>Saving and building wealth on a small income</li>
             <li>Budgeting that works specifically for you</li>
-            <li>Investing in Fixed Income Vehicles</li>
+            <li>Investing Locally and Globally</li>
             <li>Investing for your kids</li>
+            <li>Trusts and Wills</li>
           </ul>
-          <div className="topic-cards">
-            <div className="topic-card">Annual Income Like to Wanonoz</div>
-            <div className="topic-card">Direct & Saving Techniques</div>
-            <div className="topic-card">Smart White Protection</div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="fsa-benefits">
+        <h2>What You’ll Gain</h2>
+        <div className="benefits-grid">
+          <div className="benefit-card">
+            <span role="img" aria-label="tools">
+              🛠
+            </span>
+            <h3>Practical Tools</h3>
+            <p>Get calculators, templates & investment guides.</p>
+          </div>
+          <div className="benefit-card">
+            <span role="img" aria-label="knowledge">
+              📚
+            </span>
+            <h3>Knowledge You Can Use</h3>
+            <p>Learn skills to apply immediately.</p>
+          </div>
+          <div className="benefit-card">
+            <span role="img" aria-label="confidence">
+              💡
+            </span>
+            <h3>Confidence in Decisions</h3>
+            <p>Make smart money moves.</p>
+          </div>
+          <div className="benefit-card">
+            <span role="img" aria-label="protection">
+              🔒
+            </span>
+            <h3>Financial Protection</h3>
+            <p>Safeguard and transfer wealth wisely.</p>
           </div>
         </div>
-        <Button variant="contained" color="primary" className="full-btn">
-          Download Full Curriculum
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="fsa-testimonials">
+        <h2>What Our Participants Say</h2>
+        <div className="testimonial-grid">
+          <div className="testimonial-card">
+            <AccountCircleIcon className="testimonial-icon" />
+            <p>{"I doubled my savings rate after week two!"}</p>
+          </div>
+          <div className="testimonial-card">
+            <AccountCircleIcon className="testimonial-icon" />
+            <p>{"Finally, I feel confident making investment choices."}</p>
+          </div>
+          <div className="testimonial-card">
+            <AccountCircleIcon className="testimonial-icon" />
+            <p>{"The tools and templates made financial planning simple."}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Enrollment Section */}
+      <section className="fsa-enrollment">
+        <h2>Enrollment Details</h2>
+        <ul>
+          <li>
+            <strong>Program Duration:</strong> 3 Weeks
+          </li>
+          <li>
+            <strong>Format:</strong> Live + Recorded Sessions
+          </li>
+          <li>
+            <strong>Start Date:</strong> [Upcoming Cohort Date]
+          </li>
+          <li>{/* <strong>Price:</strong> [If applicable] */}</li>
+        </ul>
+        <Button variant="contained" color="primary">
+          Join the Next Cohort
         </Button>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="fsa-final-cta">
+        <div className="cta-overlay" />
+        <div className="cta-content">
+          <h2>
+            Take Control of Your Financial Future – Join the Financial Stewards
+            Academy Today!
+          </h2>
+          <div className="cta-buttons">
+            <Button variant="contained" color="secondary">
+              Enroll Now
+            </Button>
+            <Button variant="outlined" color="secondary">
+              Contact Us for More Info
+            </Button>
+          </div>
+        </div>
       </section>
     </main>
   );

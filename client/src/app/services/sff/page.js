@@ -44,7 +44,7 @@ export default function StartupFundingPage() {
           </p>
           <div className="hero-buttons">
             <button className="btn-primary">Start Your Funding Journey</button>
-            <button className="btn-secondary">Learn How We Work</button>
+            <button className="btn-secondary">Learn More About Us</button>
           </div>
           <div className="hero-icons">
             <TrendingUpIcon />
@@ -262,7 +262,7 @@ export default function StartupFundingPage() {
             </button>
             <button className="btn-secondary">
               <LinkIcon />
-              &nbsp;Investor Introductions
+              &nbsp;Learn About Us
             </button>
           </div>
         </div>

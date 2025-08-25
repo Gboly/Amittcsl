@@ -179,7 +179,7 @@ export default function TravelPage() {
               “From the moment I landed everything was seamless. I felt safe,
               welcomed and the experience was beyond anything I imagined.”
             </p>
-            <span className="testimonial-author">Amina, UK</span>
+            <span className="testimonial-author">Amina</span>
           </div>
           <div className="testimonial-card">
             <PersonIcon className="testimonial-icon male" />
@@ -187,7 +187,7 @@ export default function TravelPage() {
               “I met amazing people, explored incredible places, and finally got
               to connect with my heritage.”
             </p>
-            <span className="testimonial-author">David, USA</span>
+            <span className="testimonial-author">David</span>
           </div>
           <div className="testimonial-card">
             <WomanIcon className="testimonial-icon female" />
@@ -195,7 +195,7 @@ export default function TravelPage() {
               “It was the perfect mix of culture, fun, and relaxation. I can’t
               wait for my next trip.”
             </p>
-            <span className="testimonial-author">Tolu, Canada</span>
+            <span className="testimonial-author">Tolu</span>
           </div>
         </div>
       </section>

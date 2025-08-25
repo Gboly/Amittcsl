@@ -218,6 +218,101 @@
   margin-top: 2rem;
 }
 
+.fsa-courses {
+  padding: 4rem 2rem;
+  /* background: #f9fafb; */
+  text-align: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.fsa-courses h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1e3a8a; /* Academy blue */
+}
+
+.fsa-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.fsa-course-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* justify-content: flex-start; */
+  align-self: start; 
+  transition: transform 0.2s ease-in-out;
+  min-height: 13rem;
+}
+
+.fsa-course-card:hover {
+  transform: translateY(-4px);
+}
+
+.fsa-course-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.fsa-course-card p {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.fsa-course-full {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.fsa-course-full ul {
+  margin: 0.5rem 0 1rem 1.25rem;
+  list-style: disc;
+}
+
+.fsa-readmore-btn,
+.fsa-apply-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.fsa-readmore-btn {
+  background: #1e40af;
+  color: #fff;
+  border: none;
+}
+
+.fsa-readmore-btn:hover {
+  background: #1d4ed8;
+}
+
+.fsa-apply-btn {
+  background: #059669;
+  color: #fff;
+  border: none;
+}
+
+.fsa-apply-btn:hover {
+  background: #047857;
+}
+
 
 /* Benefits Section */
 .fsa-benefits {

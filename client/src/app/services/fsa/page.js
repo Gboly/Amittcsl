@@ -10,8 +10,13 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import ChildCareIcon from "@mui/icons-material/ChildCare";
 import CalculateIcon from "@mui/icons-material/Calculate";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useState } from "react";
+import { fsaCourses } from "@/utils/data";
+import Link from "next/link";
 
 export default function FSA() {
+  const [expanded, setExpanded] = useState(null);
+
   return (
     <main className="fsa-page">
       {/* Hero Section */}
@@ -102,6 +107,34 @@ export default function FSA() {
         </div>
       </section>
 
+      <section className="fsa-courses">
+        <h2>Explore Specific Courses Under the Academy</h2>
+        <div className="fsa-courses-grid">
+          {fsaCourses.map((course) => (
+            <div className="fsa-course-card" key={course.id}>
+              <h3>{course.title}</h3>
+              <p>{course.shortDesc}</p>
+
+              {expanded === course.id && (
+                <div className="fsa-course-full">
+                  {course.fullDesc}
+                  <button className="fsa-apply-btn">Apply Now</button>
+                </div>
+              )}
+
+              <button
+                className="fsa-readmore-btn"
+                onClick={() =>
+                  setExpanded(expanded === course.id ? null : course.id)
+                }
+              >
+                {expanded === course.id ? "Show Less" : "Read More"}
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="fsa-benefits">
         <h2>What You’ll Gain</h2>
@@ -188,9 +221,11 @@ export default function FSA() {
             <Button variant="contained" color="secondary">
               Enroll Now
             </Button>
-            <Button variant="outlined" color="secondary">
-              Contact Us for More Info
-            </Button>
+            <Link href="/contact">
+              <Button variant="outlined" color="secondary">
+                Contact Us for More Info
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

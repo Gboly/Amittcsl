@@ -1,0 +1,218 @@
+/* corporate-gifts.css */
+
+.corporate-gifts {
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- Shared Utilities --- */
+.corporate-gifts .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.corporate-gifts.center {
+  text-align: center;
+}
+
+.corporate-gifts h1, .corporate-gifts h2, .corporate-gifts h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.corporate-gifts p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.corporate-gifts .grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.corporate-gifts .grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.corporate-gifts .grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.corporate-gifts .grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.corporate-gifts .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.corporate-gifts .card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #d4af37;
+}
+
+/* --- Buttons --- */
+.corporate-gifts button {
+  cursor: pointer;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.corporate-gifts .btn-primary {
+  background: #d4af37;
+  color: white;
+}
+
+.corporate-gifts .btn-primary:hover {
+  background: #c19e32;
+}
+
+.corporate-gifts .btn-secondary {
+  border: 2px solid #333;
+  background: transparent;
+  color: #333;
+}
+
+.corporate-gifts .btn-secondary:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+/* --- Hero --- */
+.corporate-gifts .hero {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.corporate-gifts .hero p {
+  max-width: 700px;
+  margin: 1rem auto 2rem;
+  color: #eee;
+}
+
+.corporate-gifts .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* --- About --- */
+.corporate-gifts .about {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.corporate-gifts .about .two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+.corporate-gifts .about .image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.corporate-gifts .about em {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #2a5298;
+}
+
+/* --- What We Offer --- */
+.corporate-gifts .what-we-offer {
+  padding: 6rem 0;
+  background: #f9f9f9;
+}
+
+.corporate-gifts .what-we-offer h2 {
+  margin-bottom: 2rem;
+}
+
+.corporate-gifts .what-we-offer .grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* --- How It Works --- */
+.corporate-gifts .how-it-works {
+  padding: 6rem 0;
+  background: #f5f5f5;
+}
+
+.corporate-gifts .how-it-works h2 {
+  margin-bottom: 2rem;
+}
+
+.corporate-gifts .how-it-works .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* --- Why Choose Us --- */
+.corporate-gifts .why-choose-us {
+  padding: 6rem 0;
+  background: white;
+}
+
+.corporate-gifts .why-choose-us h2 {
+  margin-bottom: 2rem;
+}
+
+.corporate-gifts .why-choose-us .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* --- CTA Banner --- */
+.corporate-gifts .cta-banner {
+  background: url("/gifts-banner.jpg") center/cover no-repeat;
+  position: relative;
+  color: white;
+  padding: 6rem 0;
+}
+
+.cta-banner .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.corporate-gifts .cta-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.corporate-gifts .cta-banner p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #ddd;
+}
+
+.corporate-gifts .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .corporate-gifts .hero-buttons,
+  .corporate-gifts .cta-buttons {
+    flex-direction: column;
+  }
+}

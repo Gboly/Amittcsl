@@ -1,9 +1,9 @@
 export const services = [
   {
-    title: "Financial Stewards Academy",
+    title: "Financial Stewards",
     image:
       "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088973/Amitt/fsa_mghjft.png",
-    desc: "The Financial Stewards Academy (FSA) is a transformative course designed to equip you with practical financial skills and personal growth strategies. This course helps you feel confident, capable, and committed to your financial goals.",
+    desc: "The Financial Stewards contains transformative courses designed to equip you with practical financial skills and personal growth strategies. This course helps you feel confident, capable, and committed to your financial goals.",
     link: "/services/fsa",
   },
   {
@@ -35,11 +35,25 @@ export const services = [
     link: "/services/courses",
   },
   {
-    title: "Startup Funding Facilitation",
+    title: "Financial Advisory",
     image:
       "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088971/Amitt/sff_a4tkya.png",
-    desc: "We connect entrepreneurs with the right investors by managing the entire venture capital outreach process, from refining your pitch to securing private equity so you can focus on building and growing your business.",
-    link: "/services/sff",
+    desc: "We bring professional expertise in capital funding and financial advisory to help clients raise funds, structure investment opportunities, and optimise capital allocation for sustainable growth.",
+    link: "/services/fad",
+  },
+  {
+    title: "Supply & Procurement",
+    image:
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088971/Amitt/sff_a4tkya.png",
+    desc: "We help organizations source, purchase, and deliver exactly what they need — efficiently, transparently, and cost-effectively.",
+    link: "/services/spp",
+  },
+  {
+    title: "Corporate gifts",
+    image:
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088971/Amitt/sff_a4tkya.png",
+    desc: "We help organizations strengthen relationships and foster a culture of appreciation through thoughtful and tailored gifting solutions. Whether it’s Christmas, New Year, birthdays, anniversaries, or company milestones, our curated gifts leave a lasting impression.",
+    link: "/services/gifts",
   },
 ];
 
@@ -99,5 +113,56 @@ export const servicesParagraphs = [
   {
     text: "Whether you’re an individual looking to strengthen your skills, a company aiming to upskill your workforce, or a founder ready to take your venture to the next level, our services are built to meet you where you are — and take you further. We don’t just deliver training or connect you to opportunities; we partner with you on the journey, ensuring that each program, consultation, or engagement is aligned with your goals and produces meaningful, long-term results.",
     image: "/service-abstract-3.png",
+  },
+];
+
+export const fsaCourses = [
+  {
+    id: 1,
+    title: "The Money Playbook",
+    shortDesc:
+      "Your step-by-step guide to mastering money management, building wealth habits, and setting achievable financial goals.",
+    fullDesc: (
+      <>
+        <p>
+          This course provides a practical framework to help participants build
+          financial discipline, understand income vs. expenses, plan savings
+          effectively, and leverage tools for wealth creation.
+        </p>
+        <ul>
+          <li>Track spending with purpose</li>
+          <li>Create a savings-first habit</li>
+          <li>Identify credible investment opportunities</li>
+          <li>Develop a personalized money growth plan</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 2,
+    title: "Leaving Home",
+    shortDesc:
+      "Equipping young adults (ages 18–25) with the skills to manage money, time, and responsibilities as they step into independence.",
+    fullDesc: (
+      <>
+        <p>
+          This course equips young adults with practical financial literacy and
+          personal development skills needed to confidently manage money, time,
+          and responsibilities as they step into independent living.
+        </p>
+        <p>Topics include:</p>
+        <ul>
+          <li>Budgeting, saving & credit basics</li>
+          <li>Goal setting & accountability</li>
+          <li>Communication & problem-solving</li>
+          <li>Building self-identity and legacy</li>
+        </ul>
+        <p>
+          We also explore the three realms of knowledge:{" "}
+          <strong>YKYK, YKYDK, YDKYDK</strong> — encouraging curiosity and
+          growth.
+        </p>
+      </>
+    ),
   },
 ];

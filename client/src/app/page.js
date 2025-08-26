@@ -99,7 +99,7 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link href="/courses">
+              <Link href="/services/courses">
                 Sign up for a course <ArrowForwardIcon fontSize="small" />
               </Link>
             </li>

@@ -33,6 +33,10 @@
 .footer .brand-desc p {
     margin-top: 0;
 }
+.rc-no {
+    padding-top: 1rem;
+    font-weight: bolder;
+}
 .learn-more {
     display: flex;
     flex-flow: column;

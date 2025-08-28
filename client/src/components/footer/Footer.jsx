@@ -34,6 +34,7 @@ export default function Footer() {
             literacy and customer service to startup funding and personal
             development, we deliver practical solutions for lasting impact.
           </p>
+          <p className="rc-no">RC 87363936</p>
         </section>
 
         {/* Learn More */}

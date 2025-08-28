@@ -25,13 +25,16 @@ export default function FSA() {
         <div className="hero-content">
           <h1>Grow & Preserve Your Wealth – The Practical Way</h1>
           <p>
-            Practical 8-week financial skills course designed to help you save,
-            invest, and build a lasting financial legacy.
+            Practical financial skills course designed to help you save, invest,
+            and build a lasting financial legacy.
           </p>
           <div className="hero-buttons">
+            {/* <Link href={"/services/fsa/courses/catalogue"}> */}
             <Button variant="contained" color="primary">
-              Enroll Now
+              Explore Courses
             </Button>
+            {/* </Link> */}
+
             {/* <Button variant="outlined" color="primary">
               Download Curriculum
             </Button> */}
@@ -42,7 +45,7 @@ export default function FSA() {
       {/* About Section */}
       <section className="fsa-about">
         <div className="about-text">
-          <h2>What is Financial Stewards Academy about?</h2>
+          <h2>What is the Financial Academy about?</h2>
           <p>
             Imagine how far we would have come if our schools taught us about
             the actual making and growing money. That school is here now –
@@ -118,7 +121,9 @@ export default function FSA() {
               {expanded === course.id && (
                 <div className="fsa-course-full">
                   {course.fullDesc}
-                  <button className="fsa-apply-btn">Apply Now</button>
+                  <Link href={course.applicationLink}>
+                    <button className="fsa-apply-btn">Apply Now</button>
+                  </Link>
                 </div>
               )}
 

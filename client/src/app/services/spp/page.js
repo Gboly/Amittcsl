@@ -46,7 +46,7 @@ export default function SupplyProcurementPage() {
             they need — efficiently, transparently, and cost-effectively.
           </p>
           <div className="cta-row">
-            <a href="#cta" className="btn btn-primary">
+            <a href="/services/spp/apply" className="btn btn-primary">
               Request Procurement Support
             </a>
             {/* <a href="#about" className="btn btn-ghost">
@@ -230,10 +230,10 @@ export default function SupplyProcurementPage() {
         <div className="cta-content container">
           <h3>Get Your Procurement Needs Sorted Today</h3>
           <div className="cta-row">
-            <a href="#contact" className="btn btn-primary">
+            <a href="/services/spp/apply" className="btn btn-primary">
               Request Procurement Support
             </a>
-            <a href="#contact" className="btn btn-outline">
+            <a href="/contact" className="btn btn-outline">
               Talk to Our Team
             </a>
           </div>

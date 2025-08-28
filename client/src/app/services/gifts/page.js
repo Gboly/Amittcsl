@@ -12,6 +12,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import CakeIcon from "@mui/icons-material/Cake";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CorporateGiftsPage() {
   return (
@@ -26,8 +27,10 @@ export default function CorporateGiftsPage() {
             anniversaries, and corporate milestones.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">Explore Gift Packages</button>
-            <button className="btn-secondary">Request Custom Order</button>
+            {/* <button className="btn-primary">Explore Gift Packages</button> */}
+            <Link href={"/services/gifts/apply"}>
+              <button className="btn-primary">Request Custom Order</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -161,8 +164,12 @@ export default function CorporateGiftsPage() {
               through thoughtful gifting.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary">Explore Gift Packages</button>
-              <button className="btn-secondary">Talk to Our Team</button>
+              <Link href={"/services/gifts/apply"}>
+                <button className="btn-primary">Request gift package</button>
+              </Link>
+              <Link href={"/contact"}>
+                <button className="btn-secondary">Talk to Our Team</button>
+              </Link>
             </div>
           </div>
         </div>

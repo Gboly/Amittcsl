@@ -16,6 +16,7 @@ import DataUsageIcon from "@mui/icons-material/DataUsage"; // why choose us
 import VisibilityIcon from "@mui/icons-material/Visibility"; // why choose us
 import PersonIcon from "@mui/icons-material/Person";
 import WomanIcon from "@mui/icons-material/Woman";
+import Link from "next/link";
 
 export default function StockSharesPage() {
   return (
@@ -39,7 +40,9 @@ export default function StockSharesPage() {
             ownership, resolve legacy issues, and secure your future.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">Book a Consultation</button>
+            <Link href={"/services/ssm/apply"}>
+              <button className="btn-primary">Book a Consultation</button>
+            </Link>
             {/* <button className="btn-secondary">Talk to an Advisor</button> */}
           </div>
         </div>

@@ -29,11 +29,11 @@ export default function FSA() {
             and build a lasting financial legacy.
           </p>
           <div className="hero-buttons">
-            {/* <Link href={"/services/fsa/courses/catalogue"}> */}
-            <Button variant="contained" color="primary">
-              Explore Courses
-            </Button>
-            {/* </Link> */}
+            <Link href={"#courses"}>
+              <Button variant="contained" color="primary">
+                Explore Courses
+              </Button>
+            </Link>
 
             {/* <Button variant="outlined" color="primary">
               Download Curriculum
@@ -110,7 +110,7 @@ export default function FSA() {
         </div>
       </section>
 
-      <section className="fsa-courses">
+      <section className="fsa-courses" id="courses">
         <h2>Explore Specific Courses Under the Academy</h2>
         <div className="fsa-courses-grid">
           {fsaCourses.map((course) => (

@@ -18,6 +18,7 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import { Button } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -31,9 +32,12 @@ export default function Page() {
             productivity, and build lasting financial resilience.
           </p>
           <nav className="hero-actions" aria-label="Primary actions">
-            <Button variant="contained" color="primary" className="btn-lg">
-              Enroll Your Team
-            </Button>
+            <Link href={"/services/fee/apply"}>
+              <Button variant="contained" color="primary" className="btn-lg">
+                Enroll Your Team
+              </Button>
+            </Link>
+
             {/* <Button variant="outlined" className="btn-lg btn-outline-light">
               Request a Demo
             </Button> */}

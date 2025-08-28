@@ -16,6 +16,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import LayersIcon from "@mui/icons-material/Layers";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProfessionalCourses() {
   return (
@@ -30,9 +31,11 @@ export default function ProfessionalCourses() {
             readiness.
           </p>
           <div className="hero-buttons">
-            <Button variant="contained" color="primary">
-              Explore Courses
-            </Button>
+            <Link href={"/services/courses/catalogue"}>
+              <Button variant="contained" color="primary">
+                Explore Courses
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -55,9 +58,11 @@ export default function ProfessionalCourses() {
               <li>✔ &nbsp;Built for complex environments</li>
               <li>✔ &nbsp;Scalable, high-quality delivery</li>
             </ul>
-            <Button variant="contained" color="primary">
-              Explore Courses
-            </Button>
+            <Link href={"/services/courses/catalogue"}>
+              <Button variant="contained" color="primary">
+                Explore Courses
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -98,9 +103,11 @@ export default function ProfessionalCourses() {
           </div>
         </div>
         <div className="center-btn">
-          <Button variant="contained" color="primary">
-            See Full Course Catalogue
-          </Button>
+          <Link href={"/services/courses/catalogue"}>
+            <Button variant="contained" color="primary">
+              See Full Course Catalogue
+            </Button>
+          </Link>
         </div>
       </section>
 

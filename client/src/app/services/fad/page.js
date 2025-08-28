@@ -50,9 +50,11 @@ export default function FinancialAdvisoryPage() {
             services to governments and their agencies.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">
-              Book a Financial Advisory Call
-            </button>
+            <Link href={"/services/fad/apply"}>
+              <button className="btn-primary">
+                Book a Financial Advisory Call
+              </button>
+            </Link>
             {/* <button className="btn-secondary">Explore Our Approach</button> */}
           </div>
           <div className="hero-icons">
@@ -291,10 +293,12 @@ export default function FinancialAdvisoryPage() {
             mandate.
           </p>
           <div className="cta-buttons">
-            <button className="btn-primary">
-              <ContactMailIcon />
-              &nbsp;Book a Consultation
-            </button>
+            <Link href={"/services/fad/apply"}>
+              <button className="btn-primary">
+                <ContactMailIcon />
+                &nbsp;Book a Consultation
+              </button>
+            </Link>
             <Link href={"/services"}>
               <button className="btn-secondary">
                 <LinkIcon />

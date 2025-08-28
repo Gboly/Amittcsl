@@ -1,0 +1,168 @@
+.courses-apply {
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.application-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+/* Notice Section */
+.notice {
+  background-color: #e7f7fe;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 4px solid #1c7ed6;
+  font-size: 16px;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.info {
+  color: #1c7ed6;
+}
+
+/* Form Section */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: 1rem;
+}
+
+/* Checkboxes */
+.checkbox-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Radio Button Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-item {
+  margin-bottom: 8px;
+}
+
+.radio-label {
+  margin-left: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Success State */
+.success-state {
+  text-align: center;
+}
+
+.success-state h2 {
+  font-size: 24px;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.success-state p {
+  font-size: 16px;
+  color: #555;
+}
+
+.success-state .icon.success {
+  font-size: 50px;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+  }
+}

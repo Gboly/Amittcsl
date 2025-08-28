@@ -1,9 +1,9 @@
 export const services = [
   {
-    title: "Financial Stewards",
+    title: "Financial Academy",
     image:
       "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088973/Amitt/fsa_mghjft.png",
-    desc: "The Financial Stewards contains transformative courses designed to equip you with practical financial skills and personal growth strategies. This course helps you feel confident, capable, and committed to your financial goals.",
+    desc: "The Financial Academy contains transformative courses designed to equip you with practical financial skills and personal growth strategies. These courses helps you feel confident, capable, and committed to your financial goals.",
     link: "/services/fsa",
   },
   {
@@ -23,7 +23,7 @@ export const services = [
   {
     title: "Travel and Tours",
     image:
-      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088971/Amitt/travel_ghmtjd.png",
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1756412871/Amitt/travel_vxupkb.jpg",
     desc: "We deliver seamless trip planning, bookings, and curated tour experiences, offering unforgettable journeys for leisure, exploration, and cultural discovery.",
     link: "/services/travel",
   },
@@ -44,14 +44,14 @@ export const services = [
   {
     title: "Supply & Procurement",
     image:
-      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088971/Amitt/sff_a4tkya.png",
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1756412924/Amitt/warehouse-aisle_ydecyj.jpg",
     desc: "We help organizations source, purchase, and deliver exactly what they need — efficiently, transparently, and cost-effectively.",
     link: "/services/spp",
   },
   {
     title: "Corporate gifts",
     image:
-      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088971/Amitt/sff_a4tkya.png",
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1756412965/Amitt/gift_ansp09.jpg",
     desc: "We help organizations strengthen relationships and foster a culture of appreciation through thoughtful and tailored gifting solutions. Whether it’s Christmas, New Year, birthdays, anniversaries, or company milestones, our curated gifts leave a lasting impression.",
     link: "/services/gifts",
   },
@@ -119,7 +119,38 @@ export const servicesParagraphs = [
 export const fsaCourses = [
   {
     id: 1,
+    title: "Financial Stewards Academy",
+    applicationLink: "/services/fsa/apply?course=fsa",
+    shortDesc:
+      "A transformative 3-week course to equip you with the knowledge and tools to grow, preserve, and protect your wealth.",
+    fullDesc: (
+      <>
+        <p>
+          Financial Stewards Academy (FSA) is designed for anyone who wants to
+          grow and preserve their wealth. Over 3 weeks, we cover practical
+          financial skills, from saving better to investing wisely, protecting
+          wealth through trusts and wills, and planning for retirement.
+        </p>
+        <ul>
+          <li>Master the power of compounding</li>
+          <li>Learn to create personal income statements</li>
+          <li>Grow your wealth through credible investments</li>
+          <li>{"Invest for your kids' future"}</li>
+          <li>Understand trusts, wills, and wealth protection</li>
+          <li>Learn budgeting, saving, and diversifying your portfolio</li>
+        </ul>
+        <p>
+          {
+            "This course helps you feel confident, capable, and committed to your financial goals, ensuring you're equipped with the tools to achieve sustainable financial growth."
+          }
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 2,
     title: "The Money Playbook",
+    applicationLink: "/services/fsa/apply?course=money-playbook",
     shortDesc:
       "Your step-by-step guide to mastering money management, building wealth habits, and setting achievable financial goals.",
     fullDesc: (
@@ -139,8 +170,9 @@ export const fsaCourses = [
     ),
   },
   {
-    id: 2,
+    id: 3,
     title: "Leaving Home",
+    applicationLink: "/services/fsa/apply?course=leaving-home",
     shortDesc:
       "Equipping young adults (ages 18–25) with the skills to manage money, time, and responsibilities as they step into independence.",
     fullDesc: (
@@ -166,3 +198,251 @@ export const fsaCourses = [
     ),
   },
 ];
+
+export const fsCoursesApplication = {
+  fsa: {
+    title: "Financial Stewards Academy",
+    fields: [
+      {
+        label: "Primary Goal",
+        type: "radio",
+        options: [
+          "Learn to budget",
+          "Start investing",
+          "Build safety net",
+          "Plan retirement",
+          "Invest for children",
+          "Other",
+        ],
+      },
+      {
+        label: "Current Experience with Personal Finance",
+        type: "radio",
+        options: ["Beginner", "Intermediate", "Advanced"],
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "money-playbook": {
+    title: "Money Playbook",
+    fields: [
+      { label: "What’s your biggest money challenge right now?", type: "text" },
+      {
+        label: "Current Money Management Style",
+        type: "radio",
+        options: [
+          "I don’t track my spending",
+          "I save sometimes but without a plan",
+          "I budget and track consistently",
+        ],
+      },
+      {
+        label: "What outcome do you want from this course?",
+        type: "radio",
+        options: [
+          "Track spending with purpose",
+          "Create a savings-first habit",
+          "Identify credible investment opportunities",
+          "Develop a personalized money growth plan",
+        ],
+      },
+      {
+        label: "Cohort / Date",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "leaving-home": {
+    title: "Leaving Home",
+    fields: [
+      { label: "Why are you interested in Leaving Home?", type: "text" },
+      {
+        label: "Which area do you struggle with most?",
+        type: "radio",
+        options: [
+          "Budgeting, saving & credit basics",
+          "Goal setting & accountability",
+          "Communication & problem-solving",
+          "Building self-identity and legacy",
+        ],
+      },
+      {
+        label: "How do you currently approach challenges?",
+        type: "radio",
+        options: [
+          "I avoid them",
+          "I try but give up easily",
+          "I push through consistently",
+        ],
+      },
+      {
+        label: "Cohort / Date",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+};
+
+export const professionalCoursesApplication = {
+  "customer-service-training": {
+    title: "Customer Service Training",
+    fields: [
+      {
+        label: "Primary Goal",
+        type: "radio",
+        options: [
+          "Improve client interaction skills",
+          "Master conflict resolution",
+          "Build long-term client loyalty",
+          "Other",
+        ],
+      },
+      {
+        label: "Current Role",
+        type: "text",
+      },
+      {
+        label: "Years of Experience in Customer Service",
+        type: "number",
+      },
+      {
+        label: "What specific customer service challenges do you face?",
+        type: "text",
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "the-power-of-professionalism": {
+    title: "The Power of Professionalism",
+    fields: [
+      {
+        label: "Current Job Role",
+        type: "text",
+      },
+      {
+        label: "What are your professional development goals?",
+        type: "text",
+      },
+      {
+        label: "How would you rate your current level of professionalism?",
+        type: "radio",
+        options: ["Low", "Medium", "High"],
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "introduction-to-team-leadership": {
+    title: "Introduction to Team Leadership",
+    fields: [
+      {
+        label: "Current Leadership Experience",
+        type: "text",
+      },
+      {
+        label: "What leadership challenges have you faced?",
+        type: "text",
+      },
+      {
+        label: "What leadership style do you identify with the most?",
+        type: "select",
+        options: [
+          "Autocratic",
+          "Democratic",
+          "Transformational",
+          "Laissez-faire",
+        ],
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "essential-management": {
+    title: "Essential Management",
+    fields: [
+      {
+        label: "Current Management Experience",
+        type: "text",
+      },
+      {
+        label: "What is your preferred management style?",
+        type: "select",
+        options: ["People-oriented", "Task-oriented", "Hybrid"],
+      },
+      {
+        label: "What is the biggest challenge you face in managing teams?",
+        type: "text",
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "emotional-intelligence-at-workplace": {
+    title: "Emotional Intelligence at Workplace",
+    fields: [
+      {
+        label: "Current Emotional Intelligence Level",
+        type: "radio",
+        options: ["Low", "Medium", "High"],
+      },
+      {
+        label: "What emotional intelligence challenges do you face?",
+        type: "text",
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "ambition-root-of-achievement": {
+    title: "Ambition: The Root of All Achievement",
+    fields: [
+      {
+        label: "Personal Career Goals",
+        type: "text",
+      },
+      {
+        label: "What motivates you in your career?",
+        type: "text",
+      },
+      {
+        label: "How would you rate your current level of ambition?",
+        type: "radio",
+        options: ["Low", "Medium", "High"],
+      },
+      {
+        label: "Preferred Cohort",
+        type: "select",
+        options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+};

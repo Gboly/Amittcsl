@@ -4,91 +4,31 @@ import React, { useState, useEffect } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
-
-const giftCategories = {
-  festive: {
-    title: "Festive Gifts",
-    fields: [
-      {
-        label: "Occasion",
-        type: "radio",
-        options: ["Christmas", "New Year", "Easter", "Other"],
-      },
-      {
-        label: "Preferred Gift Type",
-        type: "select",
-        options: [
-          "Customized Hampers",
-          "Gift Cards",
-          "Branded Merchandise",
-          "Other",
-        ],
-      },
-    ],
-  },
-  milestone: {
-    title: "Milestone Gifts",
-    fields: [
-      {
-        label: "Milestone Type",
-        type: "radio",
-        options: ["Anniversary", "Promotion", "Achievement", "Other"],
-      },
-      {
-        label: "Personalized Items",
-        type: "text",
-      },
-    ],
-  },
-  birthday: {
-    title: "Birthday Surprises",
-    fields: [
-      {
-        label: "Recipient's Age",
-        type: "select",
-        options: ["Under 18", "18-30", "31-50", "51+"],
-      },
-      {
-        label: "Gift Type",
-        type: "radio",
-        options: ["Personalized Gifts", "Gift Baskets", "Gift Cards"],
-      },
-    ],
-  },
-  hampers: {
-    title: "Corporate Hampers",
-    fields: [
-      {
-        label: "Preferred Hampers",
-        type: "text",
-      },
-      {
-        label: "Branding/Customization Preferences",
-        type: "text",
-      },
-    ],
-  },
-};
+import { giftCategories } from "@/utils/data";
+import { useCreateGiftsApplicationMutation } from "@/features/api/applicationApi";
 
 const ApplicationPage = () => {
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
-  const [customMessage, setCustomMessage] = useState("");
+  //const [customMessage, setCustomMessage] = useState("");
+
+  const [submit, { isLoading: savingProgress, data: submittedData }] =
+    useCreateGiftsApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleMessageChange = (e) => {
-    setCustomMessage(e.target.value);
-  };
+  // const handleMessageChange = (e) => {
+  //   setCustomMessage(e.target.value);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit(formData);
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
@@ -129,7 +69,7 @@ const ApplicationPage = () => {
               </select>
             </div>
             <div className="form-group">
-              <label>Name *</label>
+              <label>First Name *</label>
               <input
                 type="text"
                 required
@@ -137,10 +77,10 @@ const ApplicationPage = () => {
               />
             </div>
             <div className="form-group">
-              <label>Surname *</label>
+              <label>Last Name </label>
               <input
                 type="text"
-                required
+                // required
                 onChange={(e) => handleChange("surname", e.target.value)}
               />
             </div>
@@ -215,7 +155,7 @@ const ApplicationPage = () => {
                         type="text"
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       />
                     )}
@@ -225,9 +165,11 @@ const ApplicationPage = () => {
                           <label key={opt} className="radio-item">
                             <input
                               type="radio"
-                              name={field.label}
+                              name={field.fieldName}
                               value={opt}
-                              onChange={() => handleChange(field.label, opt)}
+                              onChange={() =>
+                                handleChange(field.fieldName, opt)
+                              }
                             />
                             <span className="radio-label">{opt}</span>
                           </label>
@@ -238,7 +180,7 @@ const ApplicationPage = () => {
                       <select
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       >
                         <option value="">Select</option>
@@ -264,7 +206,7 @@ const ApplicationPage = () => {
                       type="text"
                       required
                       onChange={(e) =>
-                        handleChange(field.label, e.target.value)
+                        handleChange(field.fieldName, e.target.value)
                       }
                     />
                   </div>
@@ -284,7 +226,7 @@ const ApplicationPage = () => {
                       <select
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       >
                         <option value="">Select</option>
@@ -299,9 +241,11 @@ const ApplicationPage = () => {
                           <label key={opt} className="radio-item">
                             <input
                               type="radio"
-                              name={field.label}
+                              name={field.fieldName}
                               value={opt}
-                              onChange={() => handleChange(field.label, opt)}
+                              onChange={() =>
+                                handleChange(field.fieldName, opt)
+                              }
                             />
                             <span className="radio-label">{opt}</span>
                           </label>
@@ -325,7 +269,7 @@ const ApplicationPage = () => {
                       type="text"
                       required
                       onChange={(e) =>
-                        handleChange(field.label, e.target.value)
+                        handleChange(field.fieldName, e.target.value)
                       }
                     />
                   </div>
@@ -338,8 +282,8 @@ const ApplicationPage = () => {
           <textarea
             rows="4"
             placeholder="Please provide additional details or customization preferences."
-            value={customMessage}
-            onChange={handleMessageChange}
+            value={formData.customMessage || ""}
+            onChange={(e) => handleChange("customMessage", e.target.value)}
           />
 
           <h2>Declaration</h2>

@@ -446,3 +446,76 @@ export const professionalCoursesApplication = {
     ],
   },
 };
+
+export const giftCategories = {
+  festive: {
+    title: "Festive Gifts",
+    fields: [
+      {
+        label: "Occasion",
+        fieldName: "occasion",
+        type: "radio",
+        options: ["Christmas", "New Year", "Easter", "Other"],
+      },
+      {
+        label: "Preferred Gift Type",
+        fieldName: "preferredGiftType",
+        type: "select",
+        options: [
+          "Customized Hampers",
+          "Gift Cards",
+          "Branded Merchandise",
+          "Other",
+        ],
+      },
+    ],
+  },
+  milestone: {
+    title: "Milestone Gifts",
+    fields: [
+      {
+        label: "Milestone Type",
+        fieldName: "milestoneType",
+        type: "radio",
+        options: ["Anniversary", "Promotion", "Achievement", "Other"],
+      },
+      {
+        label: "Personalized Items",
+        fieldName: "personalizedItems",
+        type: "text",
+      },
+    ],
+  },
+  birthday: {
+    title: "Birthday Surprises",
+    fields: [
+      {
+        label: "Recipient's Age",
+        fieldName: "recipientsAge",
+        type: "select",
+        options: ["Under 18", "18-30", "31-50", "51+"],
+      },
+      {
+        label: "Gift Type",
+        fieldName: "giftType",
+        type: "radio",
+        options: ["Personalized Gifts", "Gift Baskets", "Gift Cards"],
+      },
+    ],
+  },
+  hampers: {
+    title: "Corporate Hampers",
+    fields: [
+      {
+        label: "Preferred Hampers",
+        fieldName: "preferredHampers",
+        type: "text",
+      },
+      {
+        label: "Branding/Customization Preferences",
+        fieldName: "brandingPreferences",
+        type: "text",
+      },
+    ],
+  },
+};

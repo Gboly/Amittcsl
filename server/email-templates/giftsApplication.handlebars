@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Application</title>
+</head>
+<body>
+  <h2>A client needs your Corporate gifts service</h2>
+  <p><strong>Prefix:</strong> {{prefix}}</p>
+  <p><strong>Name:</strong> {{name}} {{surname}}</p>
+  <p><strong>Email:</strong> {{email}}</p>
+  <p><strong>Phone:</strong> {{phone}}</p>
+
+  {{#if serviceFestive}}
+    <h3>Festive Gifts Details</h3>
+    <p><strong>Occasion:</strong> {{occasion}}</p>
+    <p><strong>Preferred Gift Type:</strong> {{preferredGiftType}}</p>
+  {{/if}}
+
+  {{#if serviceMilestone}}
+    <h3>Milestone Gifts Details</h3>
+    <p><strong>Milestone Type:</strong> {{milestoneType}}</p>
+    <p><strong>Personalized Items:</strong> {{personalizedItems}}</p>
+  {{/if}}
+
+  {{#if serviceBirthday}}
+    <h3>Birthday Surprises Details</h3>
+    <p><strong>Recipient's Age:</strong> {{recipientsAge}}</p>
+    <p><strong>Gift Type:</strong> {{giftType}}</p>
+  {{/if}}
+
+  {{#if serviceHampers}}
+    <h3>Corporate Hampers Details</h3>
+    <p><strong>Preferred Hampers:</strong> {{preferredHampers}}</p>
+    <p><strong>Branding Preferences:</strong> {{brandingPreferences}}</p>
+  {{/if}}
+
+  <p><strong>Custom Message:</strong> {{customMessage}}</p>
+</body>
+</html>

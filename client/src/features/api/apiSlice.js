@@ -2,21 +2,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
-  tagTypes: [""],
+  baseQuery: fetchBaseQuery({
+    baseUrl:
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:5000"
+        : "https://amittcsl-backend.vercel.app",
+  }),
+  tagTypes: ["Application"],
   endpoints: (builder) => ({}),
 });
-
-export const { useGetRequestsQuery, useSubmitRequestMutation } = apiSlice;
-
-// Example: get all VC requests
-// getRequests: builder.query({
-//   query: () => "/requests",
-// }),
-// submitRequest: builder.mutation({
-//   query: (formData) => ({
-//     url: "/requests",
-//     method: "POST",
-//     body: formData,
-//   }),
-// }),

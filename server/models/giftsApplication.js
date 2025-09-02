@@ -11,22 +11,15 @@ const giftsApplicationSchema = new mongoose.Schema({
   serviceMilestone: { type: Boolean, default: false },
   serviceBirthday: { type: Boolean, default: false },
   serviceHampers: { type: Boolean, default: false },
-  festiveDetails: {
-    occasion: { type: String },
-    preferredGiftType: { type: String },
-  },
-  milestoneDetails: {
-    milestoneType: { type: String },
-    personalizedItems: { type: String },
-  },
-  birthdayDetails: {
-    recipientsAge: { type: String },
-    giftType: { type: String },
-  },
-  hampersDetails: {
-    preferredHampers: { type: String },
-    brandingPreferences: { type: String },
-  },
+  occasion: { type: String },
+  preferredGiftType: { type: String },
+  milestoneType: { type: String },
+  personalizedItems: { type: String },
+  recipientsAge: { type: String },
+  giftType: { type: String },
+  preferredHampers: { type: String },
+  brandingPreferences: { type: String },
+
   customMessage: { type: String },
   //   declarationConfirmed: { type: Boolean, required: true },
 });

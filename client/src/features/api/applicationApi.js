@@ -15,8 +15,37 @@ export const extendedApplicationApiSlice = apiSlice.injectEndpoints({
       },
       invalidatesTags: [{ type: "Application", id: "list" }],
     }),
+    createSppApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/spp",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
+    createFadApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/fad",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
   }),
 });
 
-export const { useCreateGiftsApplicationMutation } =
-  extendedApplicationApiSlice;
+export const {
+  useCreateGiftsApplicationMutation,
+  useCreateSppApplicationMutation,
+  useCreateFadApplicationMutation,
+} = extendedApplicationApiSlice;

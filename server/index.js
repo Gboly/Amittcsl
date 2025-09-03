@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import runDb from "./config/db.config.js";
 import giftsApplicationRoute from "./routes/giftsApplication.js";
+import sppApplicationRoute from "./routes/sppApplication.js";
+import fadApplicationRoute from "./routes/fadApplication.js";
 // import contactRoute from "./routes/contact.js";
 // import newsletterSubsRoute from "./routes/newsletterSubs.js";
 // import fsaRoute from "./routes/fsa.js";
@@ -14,11 +16,7 @@ dotenv.config();
 const app = express();
 
 //cors
-const allowedOrigins = [
-  "https://amittcsl.com",
-  "http://localhost:3000",
-  "http://172.20.10.6:3000",
-];
+const allowedOrigins = ["https://amittcsl.com", "http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) >= 0) {
@@ -44,6 +42,8 @@ runDb();
 
 //routing
 app.use("/application/gifts", giftsApplicationRoute);
+app.use("/application/spp", sppApplicationRoute);
+app.use("/application/fad", fadApplicationRoute);
 // app.use("/message", contactRoute);
 // app.use("/newsletter", newsletterSubsRoute);
 // app.use("/fsa", fsaRoute);

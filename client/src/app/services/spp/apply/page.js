@@ -3,6 +3,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
 import { useState } from "react";
+import { useCreateSppApplicationMutation } from "@/features/api/applicationApi";
 
 const services = {
   sourcingVendor: {
@@ -10,10 +11,12 @@ const services = {
     fields: [
       {
         label: "Primary Requirement",
+        fieldName: "primaryRequirement",
         type: "text",
       },
       {
         label: "Category of Product/Service Needed",
+        fieldName: "categoryOfProduct",
         type: "select",
         options: [
           "Office Supplies",
@@ -24,6 +27,7 @@ const services = {
       },
       {
         label: "Preferred Supplier Type",
+        fieldName: "preferredSupplierType",
         type: "radio",
         options: ["Local", "International", "No Preference"],
       },
@@ -34,11 +38,13 @@ const services = {
     fields: [
       {
         label: "Project Timeline",
+        fieldName: "projectTimeline",
         type: "select",
         options: ["1 Month", "3 Months", "6 Months", "Other"],
       },
       {
         label: "Preferred Delivery Method",
+        fieldName: "preferredDeliveryMethod",
         type: "radio",
         options: ["Standard Delivery", "Express Delivery"],
       },
@@ -49,10 +55,12 @@ const services = {
     fields: [
       {
         label: "Estimated Budget",
+        fieldName: "estimatedBudget",
         type: "text",
       },
       {
         label: "Price Range Considerations",
+        fieldName: "priceRangeConsiderations",
         type: "text",
       },
     ],
@@ -60,24 +68,27 @@ const services = {
 };
 
 const ApplicationPage = () => {
-  const [submitted, setSubmitted] = useState(false);
+  //const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
-  const [customMessage, setCustomMessage] = useState("");
+  //const [customMessage, setCustomMessage] = useState("");
+
+  const [submit, { isLoading: savingProgress, data: submittedData }] =
+    useCreateSppApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleMessageChange = (e) => {
-    setCustomMessage(e.target.value);
-  };
+  // const handleMessageChange = (e) => {
+  //   setCustomMessage(e.target.value);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit(formData);
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
@@ -214,7 +225,7 @@ const ApplicationPage = () => {
                         type="text"
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       />
                     )}
@@ -224,9 +235,11 @@ const ApplicationPage = () => {
                           <label key={opt} className="radio-item">
                             <input
                               type="radio"
-                              name={field.label}
+                              name={field.fieldName}
                               value={opt}
-                              onChange={() => handleChange(field.label, opt)}
+                              onChange={() =>
+                                handleChange(field.fieldName, opt)
+                              }
                             />
                             <span className="radio-label">{opt}</span>
                           </label>
@@ -237,7 +250,7 @@ const ApplicationPage = () => {
                       <select
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       >
                         <option value="">Select</option>
@@ -264,7 +277,7 @@ const ApplicationPage = () => {
                         type="text"
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       />
                     )}
@@ -274,9 +287,11 @@ const ApplicationPage = () => {
                           <label key={opt} className="radio-item">
                             <input
                               type="radio"
-                              name={field.label}
+                              name={field.fieldName}
                               value={opt}
-                              onChange={() => handleChange(field.label, opt)}
+                              onChange={() =>
+                                handleChange(field.fieldName, opt)
+                              }
                             />
                             <span className="radio-label">{opt}</span>
                           </label>
@@ -287,7 +302,7 @@ const ApplicationPage = () => {
                       <select
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       >
                         <option value="">Select</option>
@@ -313,7 +328,7 @@ const ApplicationPage = () => {
                       type="text"
                       required
                       onChange={(e) =>
-                        handleChange(field.label, e.target.value)
+                        handleChange(field.fieldName, e.target.value)
                       }
                     />
                   </div>
@@ -328,8 +343,10 @@ const ApplicationPage = () => {
               <textarea
                 rows="4"
                 placeholder="Please provide details about your specific procurement needs."
-                value={customMessage}
-                onChange={handleMessageChange}
+                value={formData.otherServiceDetails || ""}
+                onChange={(e) =>
+                  handleChange("otherServiceDetails", e.target.value)
+                }
               />
             </div>
           )}

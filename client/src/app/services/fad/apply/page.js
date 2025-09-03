@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
+import { useState } from "react";
+import { useCreateFadApplicationMutation } from "@/features/api/applicationApi";
 
 const services = {
   capitalFunding: {
@@ -10,6 +11,7 @@ const services = {
     fields: [
       {
         label: "Primary Goal",
+        fieldName: "primaryGoal",
         type: "radio",
         options: [
           "Raise Capital",
@@ -20,11 +22,13 @@ const services = {
       },
       {
         label: "Investment Focus",
+        fieldName: "investmentFocus",
         type: "radio",
         options: ["Equity", "Debt", "Quasi-equity", "Mixed"],
       },
       {
         label: "Timeline for Fundraising",
+        fieldName: "timeline",
         type: "select",
         options: ["3-6 Months", "6-12 Months", "12+ Months"],
       },
@@ -35,15 +39,18 @@ const services = {
     fields: [
       {
         label: "Current Portfolio Allocation",
+        fieldName: "currentPortfolioAllocation",
         type: "text",
       },
       {
         label: "Risk Tolerance",
+        fieldName: "riskTolerance",
         type: "radio",
         options: ["Low", "Medium", "High"],
       },
       {
         label: "Desired Outcome",
+        fieldName: "desiredOutcome",
         type: "text",
       },
     ],
@@ -51,9 +58,14 @@ const services = {
   accountingCompliance: {
     title: "Accounting & Compliance Advisory",
     fields: [
-      { label: "Government or Agency", type: "text" },
+      {
+        label: "Government or Agency",
+        fieldName: "governmentOrAgency",
+        type: "text",
+      },
       {
         label: "Service Type",
+        fieldName: "serviceType",
         type: "radio",
         options: ["Financial Advisory", "Accounting Services", "Compliance"],
       },
@@ -62,32 +74,26 @@ const services = {
 };
 
 const ApplicationPage = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
-  const [customMessage, setCustomMessage] = useState("");
+  const [submit, { data: submittedData }] = useCreateFadApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleMessageChange = (e) => {
-    setCustomMessage(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit(formData);
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
         <h2>Application received!</h2>
         <p>
           Thanks for applying for the Financial Advisory Service. We’ll contact
-          you <strong>by email</strong> shortly with next steps and
-          instructions.
+          you <strong>by email</strong> shortly with next steps.
         </p>
       </div>
     );
@@ -156,7 +162,7 @@ const ApplicationPage = () => {
               </select>
             </div>
             <div className="form-group">
-              <label>Date of Birth (DD/MM/YYYY) *</label>
+              <label>Date of Birth *</label>
               <input
                 type="date"
                 required
@@ -239,20 +245,151 @@ const ApplicationPage = () => {
             </label>
           </div>
 
-          <h2>Custom Message</h2>
-          <textarea
-            rows="4"
-            placeholder="Please provide details about your selected services, or if you selected 'Others', specify your request."
-            value={customMessage}
-            onChange={handleMessageChange}
-          />
+          {/* Capital Funding Section */}
+          {formData.serviceCapitalFunding && (
+            <>
+              <h2>{services.capitalFunding.title} Details</h2>
+              {services.capitalFunding.fields.map((field, idx) => (
+                <div className="form-group" key={idx}>
+                  <label>{field.label}</label>
+                  {field.type === "text" && (
+                    <input
+                      type="text"
+                      onChange={(e) =>
+                        handleChange(field.fieldName, e.target.value)
+                      }
+                    />
+                  )}
+                  {field.type === "radio" && (
+                    <div className="radio-group">
+                      {field.options.map((opt) => (
+                        <label key={opt} className="radio-item">
+                          <input
+                            type="radio"
+                            name={field.fieldName}
+                            value={opt}
+                            onChange={() => handleChange(field.fieldName, opt)}
+                          />
+                          <span>{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                  {field.type === "select" && (
+                    <select
+                      onChange={(e) =>
+                        handleChange(field.fieldName, e.target.value)
+                      }
+                    >
+                      <option value="">Select</option>
+                      {field.options.map((opt) => (
+                        <option key={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  )}
+                </div>
+              ))}
+            </>
+          )}
+
+          {/* Portfolio Diversification Section */}
+          {formData.servicePortfolioDiversification && (
+            <>
+              <h2>{services.portfolioDiversification.title} Details</h2>
+              {services.portfolioDiversification.fields.map((field, idx) => (
+                <div className="form-group" key={idx}>
+                  <label>{field.label}</label>
+                  {field.type === "text" && (
+                    <input
+                      type="text"
+                      onChange={(e) =>
+                        handleChange(field.fieldName, e.target.value)
+                      }
+                    />
+                  )}
+                  {field.type === "radio" && (
+                    <div className="radio-group">
+                      {field.options.map((opt) => (
+                        <label key={opt} className="radio-item">
+                          <input
+                            type="radio"
+                            name={field.fieldName}
+                            value={opt}
+                            onChange={() => handleChange(field.fieldName, opt)}
+                          />
+                          <span>{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </>
+          )}
+
+          {/* Accounting & Compliance Section */}
+          {formData.serviceAccountingCompliance && (
+            <>
+              <h2>{services.accountingCompliance.title} Details</h2>
+              {services.accountingCompliance.fields.map((field, idx) => (
+                <div className="form-group" key={idx}>
+                  <label>{field.label}</label>
+                  {field.type === "text" && (
+                    <input
+                      type="text"
+                      onChange={(e) =>
+                        handleChange(field.fieldName, e.target.value)
+                      }
+                    />
+                  )}
+                  {field.type === "radio" && (
+                    <div className="radio-group">
+                      {field.options.map((opt) => (
+                        <label key={opt} className="radio-item">
+                          <input
+                            type="radio"
+                            name={field.fieldName}
+                            value={opt}
+                            onChange={() => handleChange(field.fieldName, opt)}
+                          />
+                          <span>{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </>
+          )}
+
+          {formData.serviceOthers && (
+            <div className="form-group">
+              <label>Other Service Details</label>
+              <textarea
+                rows="4"
+                placeholder="Please provide details if you selected 'Others'."
+                onChange={(e) =>
+                  handleChange("otherServiceDetails", e.target.value)
+                }
+              />
+            </div>
+          )}
+
+          <div className="form-group">
+            <h2>Custom Message</h2>
+            <textarea
+              rows="4"
+              placeholder="Please provide more details about your selected service(s) if any"
+              value={formData.customMessage}
+              onChange={(e) => handleChange("customMessage", e.target.value)}
+            />
+          </div>
 
           <h2>Declaration</h2>
           <div className="form-group checkbox">
             <label>
               <input type="checkbox" required /> I hereby confirm that the
-              information provided above is true and accurate to the best of my
-              knowledge.
+              information provided above is true and accurate.
             </label>
           </div>
 

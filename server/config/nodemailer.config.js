@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 import nodemailerExpressHandlebars from "nodemailer-express-handlebars";
 import dotenv from "dotenv";
 dotenv.config();
+import path from "path";
 
 // Configure your email service (example for Gmail with OAuth or your custom SMTP)
 export const transporter = nodemailer.createTransport({
@@ -20,10 +21,10 @@ export const transporter = nodemailer.createTransport({
 const handlebarOptions = {
   viewEngine: {
     extName: ".handlebars",
-    partialsDir: "../server/email-templates/", // Path where your Handlebars templates are stored
+    partialsDir: path.resolve("./server/email-templates/"), // Path where your Handlebars templates are stored
     defaultLayout: false,
   },
-  viewPath: "../server/email-templates/",
+  viewPath: path.resolve("./email-templates/"),
 };
 
 transporter.use("compile", nodemailerExpressHandlebars(handlebarOptions));

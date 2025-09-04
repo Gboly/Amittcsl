@@ -24,7 +24,7 @@ const handlebarOptions = {
     partialsDir: path.resolve("./server/email-templates/"), // Path where your Handlebars templates are stored
     defaultLayout: false,
   },
-  viewPath: path.resolve("./email-templates/"),
+  viewPath: path.resolve("./server/email-templates/"),
 };
 
 transporter.use("compile", nodemailerExpressHandlebars(handlebarOptions));

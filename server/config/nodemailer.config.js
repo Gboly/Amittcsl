@@ -2,7 +2,23 @@ import nodemailer from "nodemailer";
 import nodemailerExpressHandlebars from "nodemailer-express-handlebars";
 import dotenv from "dotenv";
 dotenv.config();
+
+import fs from "fs";
 import path from "path";
+
+const templatePath = path.join(
+  process.cwd(), // repo root on Vercel
+  "server",
+  "email-templates",
+  "ssmApplication.handlebars"
+);
+
+if (!fs.existsSync(templatePath)) {
+  console.error("Template not found at:", templatePath);
+  // optionally try a fallback based on __dirname if your file layout differs
+}
+
+//const source = fs.readFileSync(templatePath, "utf8");
 
 // Configure your email service (example for Gmail with OAuth or your custom SMTP)
 export const transporter = nodemailer.createTransport({
@@ -21,10 +37,10 @@ export const transporter = nodemailer.createTransport({
 const handlebarOptions = {
   viewEngine: {
     extName: ".handlebars",
-    partialsDir: path.resolve("./server/email-templates/"), // Path where your Handlebars templates are stored
+    partialsDir: templatePath, // Path where your Handlebars templates are stored
     defaultLayout: false,
   },
-  viewPath: path.resolve("./server/email-templates/"),
+  viewPath: templatePath,
 };
 
 transporter.use("compile", nodemailerExpressHandlebars(handlebarOptions));

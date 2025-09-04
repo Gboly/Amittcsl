@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* ==== Basic reset for email clients ==== */
+      body, table, td, div, p, a { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif; }
+      body { margin:0; padding:0; background:#f5f7fb; color:#0f172a; }
+      img { border:0; outline:none; text-decoration:none; max-width:100%; }
+      a { color:#2563eb; text-decoration:none; }
+      .container { width:100%; background:#f5f7fb; padding:24px 12px; }
+      .card { max-width:640px; margin:0 auto; background:#ffffff; border-radius:16px; border:1px solid #e5e7eb; overflow:hidden; }
+      .header { background:#0f172a; color:#ffffff; padding:20px 24px; }
+      .title { font-size:18px; font-weight:700; margin:0; }
+      .sub { font-size:13px; opacity:0.85; margin:6px 0 0 0; }
+      .content { padding:20px 24px; }
+      .section-title { font-size:16px; font-weight:700; margin:0 0 8px 0; }
+      .kvs { width:100%; border-collapse:collapse; margin:8px 0 16px; }
+      .kvs th, .kvs td { text-align:left; vertical-align:top; padding:10px 12px; border-top:1px solid #eef2f7; font-size:14px; }
+      .kvs th { width:200px; color:#334155; font-weight:600; background:#fafafa; }
+      .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; font-weight:600; margin:4px 6px 0 0; }
+      .muted { color:#475569; }
+      .divider { height:1px; background:#f1f5f9; margin:16px 0; }
+      .foot { padding:16px 24px 22px; background:#f8fafc; color:#64748b; font-size:12px; text-align:center; }
+      .blockquote { border-left:4px solid #e2e8f0; padding:10px 12px; background:#f8fafc; border-radius:8px; white-space:pre-line; }
+      /* Mobile tweaks */
+      @media (max-width: 480px) {
+        .header, .content, .foot { padding-left:16px; padding-right:16px; }
+        .kvs th { width:140px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h1 class="title">New Application Received</h1>
+          <p class="sub">Course: {{courseTitle}}</p>
+        </div>
+
+        <div class="content">
+          <h2 class="section-title">Personal Information</h2>
+          <table class="kvs">
+            <tr><th>Prefix</th><td>{{prefix}}</td></tr>
+            <tr><th>Name</th><td>{{name}} {{surname}}</td></tr>
+            <tr><th>Email</th><td>{{email}}</td></tr>
+            <tr><th>Phone</th><td>{{phone}}</td></tr>
+          </table>
+
+          <div class="divider"></div>
+
+          <h2 class="section-title">Course Information</h2>
+          <table class="kvs">
+            <tr><th>Course ID</th><td>{{courseId}}</td></tr>
+            <tr><th>Course Title</th><td>{{courseTitle}}</td></tr>
+
+            {{!-- === Dynamic Course Fields === --}}
+            {{#if customerServiceTraining}}
+              <tr><th>Primary Goal</th><td>{{customerServiceTraining.primaryGoal}}</td></tr>
+              <tr><th>Current Role</th><td>{{customerServiceTraining.currentRole}}</td></tr>
+              <tr><th>Experience</th><td>{{customerServiceTraining.customerServiceExperience}}</td></tr>
+              <tr><th>Challenges</th><td>{{customerServiceTraining.customerServiceChallenges}}</td></tr>
+              <tr><th>Preferred Cohort</th><td>{{customerServiceTraining.preferredCohort}}</td></tr>
+            {{/if}}
+
+            {{#if professionalism}}
+              <tr><th>Current Job Role</th><td>{{professionalism.currentJobRole}}</td></tr>
+              <tr><th>Professional Goals</th><td>{{professionalism.professionalGoals}}</td></tr>
+              <tr><th>Professionalism Level</th><td>{{professionalism.professionalismLevel}}</td></tr>
+              <tr><th>Preferred Cohort</th><td>{{professionalism.preferredCohort}}</td></tr>
+            {{/if}}
+
+            {{#if teamLeadership}}
+              <tr><th>Leadership Experience</th><td>{{teamLeadership.leadershipExperience}}</td></tr>
+              <tr><th>Leadership Challenges</th><td>{{teamLeadership.leadershipChallenges}}</td></tr>
+              <tr><th>Leadership Style</th><td>{{teamLeadership.leadershipStyle}}</td></tr>
+              <tr><th>Preferred Cohort</th><td>{{teamLeadership.preferredCohort}}</td></tr>
+            {{/if}}
+
+            {{#if management}}
+              <tr><th>Management Experience</th><td>{{management.managementExperience}}</td></tr>
+              <tr><th>Management Style</th><td>{{management.managementStyle}}</td></tr>
+              <tr><th>Management Challenges</th><td>{{management.managementChallenges}}</td></tr>
+              <tr><th>Preferred Cohort</th><td>{{management.preferredCohort}}</td></tr>
+            {{/if}}
+
+            {{#if emotionalIntelligence}}
+              <tr><th>Emotional Intelligence Level</th><td>{{emotionalIntelligence.emotionalIntelligenceLevel}}</td></tr>
+              <tr><th>Challenges</th><td>{{emotionalIntelligence.emotionalChallenges}}</td></tr>
+              <tr><th>Preferred Cohort</th><td>{{emotionalIntelligence.preferredCohort}}</td></tr>
+            {{/if}}
+
+            {{#if ambition}}
+              <tr><th>Career Goals</th><td>{{ambition.careerGoals}}</td></tr>
+              <tr><th>Motivation</th><td>{{ambition.careerMotivation}}</td></tr>
+              <tr><th>Ambition Level</th><td>{{ambition.ambitionLevel}}</td></tr>
+              <tr><th>Preferred Cohort</th><td>{{ambition.preferredCohort}}</td></tr>
+            {{/if}}
+          </table>
+
+          {{#if customMessage}}
+            <div class="divider"></div>
+            <h2 class="section-title">Custom Message</h2>
+            <div class="blockquote">{{customMessage}}</div>
+          {{/if}}
+        </div>
+
+        <div class="foot">
+          This application was submitted on {{createdAt}}.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

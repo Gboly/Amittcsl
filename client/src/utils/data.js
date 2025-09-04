@@ -297,6 +297,7 @@ export const professionalCoursesApplication = {
     fields: [
       {
         label: "Primary Goal",
+        fieldName: "primaryGoal",
         type: "radio",
         options: [
           "Improve client interaction skills",
@@ -307,18 +308,22 @@ export const professionalCoursesApplication = {
       },
       {
         label: "Current Role",
+        fieldName: "currentRole",
         type: "text",
       },
       {
         label: "Years of Experience in Customer Service",
+        fieldName: "customerServiceExperience",
         type: "number",
       },
       {
         label: "What specific customer service challenges do you face?",
+        fieldName: "customerServiceChallenges",
         type: "text",
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -330,19 +335,23 @@ export const professionalCoursesApplication = {
     fields: [
       {
         label: "Current Job Role",
+        fieldName: "currentJobRole",
         type: "text",
       },
       {
         label: "What are your professional development goals?",
+        fieldName: "professionalGoals",
         type: "text",
       },
       {
         label: "How would you rate your current level of professionalism?",
+        fieldName: "professionalismLevel",
         type: "radio",
         options: ["Low", "Medium", "High"],
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -354,14 +363,17 @@ export const professionalCoursesApplication = {
     fields: [
       {
         label: "Current Leadership Experience",
+        fieldName: "leadershipExperience",
         type: "text",
       },
       {
         label: "What leadership challenges have you faced?",
+        fieldName: "leadershipChallenges",
         type: "text",
       },
       {
         label: "What leadership style do you identify with the most?",
+        fieldName: "leadershipStyle",
         type: "select",
         options: [
           "Autocratic",
@@ -372,6 +384,7 @@ export const professionalCoursesApplication = {
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -383,19 +396,23 @@ export const professionalCoursesApplication = {
     fields: [
       {
         label: "Current Management Experience",
+        fieldName: "managementExperience",
         type: "text",
       },
       {
         label: "What is your preferred management style?",
+        fieldName: "managementStyle",
         type: "select",
         options: ["People-oriented", "Task-oriented", "Hybrid"],
       },
       {
         label: "What is the biggest challenge you face in managing teams?",
+        fieldName: "managementChallenges",
         type: "text",
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -407,15 +424,18 @@ export const professionalCoursesApplication = {
     fields: [
       {
         label: "Current Emotional Intelligence Level",
+        fieldName: "emotionalIntelligenceLevel",
         type: "radio",
         options: ["Low", "Medium", "High"],
       },
       {
         label: "What emotional intelligence challenges do you face?",
+        fieldName: "emotionalChallenges",
         type: "text",
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -427,19 +447,23 @@ export const professionalCoursesApplication = {
     fields: [
       {
         label: "Personal Career Goals",
+        fieldName: "careerGoals",
         type: "text",
       },
       {
         label: "What motivates you in your career?",
+        fieldName: "careerMotivation",
         type: "text",
       },
       {
         label: "How would you rate your current level of ambition?",
+        fieldName: "ambitionLevel",
         type: "radio",
         options: ["Low", "Medium", "High"],
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },

@@ -105,3 +105,87 @@ export const setFadApplicationData = (formData) => ({
   customMessage: formData.customMessage,
   declarationConfirmed: formData.declarationConfirmed || false,
 });
+
+// utils/mapApplicationData.js
+
+/**
+ * Maps frontend formData + selectedCourse into the proper structure
+ * for ProfessionalCourseApplication mongoose model.
+ */
+export function setCoursesApplicationData(formData) {
+  // Base applicant info
+  const baseData = {
+    prefix: formData.prefix,
+    name: formData.name,
+    surname: formData.surname,
+    email: formData.email,
+    phone: formData.phone,
+    courseId: formData.courseId,
+    courseTitle: formData.selectedCourse,
+    customMessage: formData.customMessage || "",
+  };
+
+  // Map course-specific fields into the correct sub-schema
+  const courseSpecific = {};
+
+  switch (formData.courseId) {
+    case "customer-service-training":
+      courseSpecific.customerServiceTraining = {
+        primaryGoal: formData.primaryGoal,
+        currentRole: formData.currentRole,
+        customerServiceExperience: formData.customerServiceExperience,
+        customerServiceChallenges: formData.customerServiceChallenges,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    case "the-power-of-professionalism":
+      courseSpecific.professionalism = {
+        currentJobRole: formData.currentJobRole,
+        professionalGoals: formData.professionalGoals,
+        professionalismLevel: formData.professionalismLevel,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    case "introduction-to-team-leadership":
+      courseSpecific.teamLeadership = {
+        leadershipExperience: formData.leadershipExperience,
+        leadershipChallenges: formData.leadershipChallenges,
+        leadershipStyle: formData.leadershipStyle,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    case "essential-management":
+      courseSpecific.management = {
+        managementExperience: formData.managementExperience,
+        managementStyle: formData.managementStyle,
+        managementChallenges: formData.managementChallenges,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    case "emotional-intelligence-at-workplace":
+      courseSpecific.emotionalIntelligence = {
+        emotionalIntelligenceLevel: formData.emotionalIntelligenceLevel,
+        emotionalChallenges: formData.emotionalChallenges,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    case "ambition-root-of-achievement":
+      courseSpecific.ambition = {
+        careerGoals: formData.careerGoals,
+        careerMotivation: formData.careerMotivation,
+        ambitionLevel: formData.ambitionLevel,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    default:
+      throw new Error(`Unsupported courseId: ${formData.courseId}`);
+  }
+
+  return { ...baseData, ...courseSpecific };
+}

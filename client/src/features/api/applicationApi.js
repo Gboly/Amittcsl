@@ -41,6 +41,71 @@ export const extendedApplicationApiSlice = apiSlice.injectEndpoints({
       },
       invalidatesTags: [{ type: "Application", id: "list" }],
     }),
+    createCoursesApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/courses",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
+    createFadApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/fad",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
+    createFadApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/fad",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
+    createFadApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/fad",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
+    createFadApplication: builder.mutation({
+      query: (credentials) => ({
+        url: "/application/fad",
+        method: "POST",
+        body: credentials,
+        formData: true,
+        credentials: "include",
+      }),
+      transformResponse: (response) => {
+        return response;
+      },
+      invalidatesTags: [{ type: "Application", id: "list" }],
+    }),
   }),
 });
 
@@ -48,4 +113,5 @@ export const {
   useCreateGiftsApplicationMutation,
   useCreateSppApplicationMutation,
   useCreateFadApplicationMutation,
+  useCreateCoursesApplicationMutation,
 } = extendedApplicationApiSlice;

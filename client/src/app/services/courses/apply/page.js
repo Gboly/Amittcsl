@@ -5,12 +5,15 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
 import { professionalCoursesApplication } from "@/utils/data";
+import { useCreateCoursesApplicationMutation } from "@/features/api/applicationApi";
 
 const ApplicationPage = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [customMessage, setCustomMessage] = useState("");
+  const [selectedCourseId, setCourseId] = useState(null);
+
+  const [submit, { data: submittedData }] =
+    useCreateCoursesApplicationMutation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -18,6 +21,7 @@ const ApplicationPage = () => {
     const course = professionalCoursesApplication[courseId];
     if (course) {
       setSelectedCourse(course);
+      setCourseId(courseId);
     }
   }, []);
 
@@ -25,16 +29,16 @@ const ApplicationPage = () => {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleMessageChange = (e) => {
-    setCustomMessage(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit({
+      ...formData,
+      selectedCourse: selectedCourse.title,
+      courseId: selectedCourseId,
+    });
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
@@ -43,9 +47,9 @@ const ApplicationPage = () => {
           Thanks for applying for the{" "}
           <strong>
             {selectedCourse ? selectedCourse.title : "the course"}
-          </strong>
-          . We’ll contact you <strong>by email</strong> shortly with next steps
-          and instructions.
+          </strong>{" "}
+          course. We’ll contact you <strong>by email</strong> shortly with next
+          steps and instructions.
         </p>
       </div>
     );
@@ -128,14 +132,18 @@ const ApplicationPage = () => {
                   <input
                     type="text"
                     required
-                    onChange={(e) => handleChange(field.label, e.target.value)}
+                    onChange={(e) =>
+                      handleChange(field.fieldName, e.target.value)
+                    }
                   />
                 )}
                 {field.type === "number" && (
                   <input
                     type="number"
                     required
-                    onChange={(e) => handleChange(field.label, e.target.value)}
+                    onChange={(e) =>
+                      handleChange(field.fieldName, e.target.value)
+                    }
                   />
                 )}
                 {field.type === "radio" && (
@@ -144,9 +152,9 @@ const ApplicationPage = () => {
                       <label key={opt} className="radio-item">
                         <input
                           type="radio"
-                          name={field.label}
+                          name={field.fieldName}
                           value={opt}
-                          onChange={() => handleChange(field.label, opt)}
+                          onChange={() => handleChange(field.fieldName, opt)}
                         />
                         <span className="radio-label">{opt}</span>
                       </label>
@@ -156,7 +164,9 @@ const ApplicationPage = () => {
                 {field.type === "select" && (
                   <select
                     required
-                    onChange={(e) => handleChange(field.label, e.target.value)}
+                    onChange={(e) =>
+                      handleChange(field.fieldName, e.target.value)
+                    }
                   >
                     <option value="">Select</option>
                     {field.options.map((opt) => (
@@ -171,8 +181,8 @@ const ApplicationPage = () => {
           <textarea
             rows="4"
             placeholder="Please provide any additional context or questions about the course."
-            value={customMessage}
-            onChange={handleMessageChange}
+            value={formData.customMessage}
+            onChange={(e) => handleChange("customMessage", e.target.value)}
           />
 
           <h2>Declaration</h2>

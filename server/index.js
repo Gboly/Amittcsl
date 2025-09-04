@@ -44,6 +44,8 @@ app.use(morgan("combined"));
 //Database connection
 runDb();
 
+console.log("GMAIL", process.env.GMAIL);
+
 //routing
 app.use("/application/gifts", giftsApplicationRoute);
 app.use("/application/spp", sppApplicationRoute);

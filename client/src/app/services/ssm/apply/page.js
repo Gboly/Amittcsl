@@ -4,10 +4,11 @@ import React, { useState, useEffect } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
+import { useCreateSsmApplicationMutation } from "@/features/api/applicationApi";
 
 const ApplicationPage = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
+  const [submit, { data: submittedData }] = useCreateSsmApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -15,10 +16,10 @@ const ApplicationPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit(formData);
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
@@ -185,9 +186,18 @@ const ApplicationPage = () => {
           <h2>Declaration</h2>
           <div className="form-group checkbox">
             <label>
-              <input type="checkbox" required /> I hereby confirm that the
-              information provided above is true and accurate to the best of my
-              knowledge.
+              <input
+                type="checkbox"
+                onChange={(e) =>
+                  handleChange(
+                    "declarationConfirmed",
+                    !formData.declarationConfirmed
+                  )
+                }
+                required
+              />{" "}
+              I hereby confirm that the information provided above is true and
+              accurate to the best of my knowledge.
             </label>
           </div>
 

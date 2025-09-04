@@ -8,10 +8,5 @@
           "src": "/(.*)",
           "dest": "/"
         }
-    ],
-    "functions": {
-    "api/**/*.js": {
-      "includeFiles": "server/email-templates/**"
-    }
-  }
+    ]
   }

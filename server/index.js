@@ -20,7 +20,7 @@ dotenv.config();
 const app = express();
 
 //cors
-const allowedOrigins = ["https://amittcsl.com", "http://localhost:3000"];
+const allowedOrigins = ["https://www.amittcsl.com", "http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) >= 0) {

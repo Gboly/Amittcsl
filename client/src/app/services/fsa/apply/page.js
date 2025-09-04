@@ -5,11 +5,13 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
 import { fsCoursesApplication } from "@/utils/data";
+import { useCreateFsApplicationMutation } from "@/features/api/applicationApi";
 
 const ApplicationPage = () => {
   const [course, setCourse] = useState(null);
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
+
+  const [submit, { data: submittedData }] = useCreateFsApplicationMutation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -25,10 +27,14 @@ const ApplicationPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit({
+      ...formData,
+      selectedCourse: fsCoursesApplication[course].title,
+      courseId: course,
+    });
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
@@ -147,7 +153,7 @@ const ApplicationPage = () => {
                         type="text"
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       />
                     )}
@@ -157,9 +163,11 @@ const ApplicationPage = () => {
                           <label key={opt} className="radio-item">
                             <input
                               type="radio"
-                              name={field.label}
+                              name={field.fieldName}
                               value={opt}
-                              onChange={() => handleChange(field.label, opt)}
+                              onChange={() =>
+                                handleChange(field.fieldName, opt)
+                              }
                             />
                             <span className="radio-label">{opt}</span>
                           </label>
@@ -170,7 +178,7 @@ const ApplicationPage = () => {
                       <select
                         required
                         onChange={(e) =>
-                          handleChange(field.label, e.target.value)
+                          handleChange(field.fieldName, e.target.value)
                         }
                       >
                         <option value="">Select</option>
@@ -194,14 +202,8 @@ const ApplicationPage = () => {
 
           <div className="form-group checkbox">
             <label>
-              <input type="checkbox" required /> I agree to be contacted via the
-              email I provided.
-            </label>
-          </div>
-          <div className="form-group checkbox">
-            <label>
-              <input type="checkbox" required /> I have read and accept the
-              privacy notice.
+              <input type="checkbox" required /> I hereby confirm that the
+              information provided above is true and accurate.
             </label>
           </div>
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, table, td, div, p, a { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif; }
+    body { margin:0; padding:0; background:#f5f7fb; color:#0f172a; }
+    img { border:0; outline:none; text-decoration:none; max-width:100%; }
+    a { color:#2563eb; text-decoration:none; }
+    .container { width:100%; background:#f5f7fb; padding:24px 12px; }
+    .card { max-width:640px; margin:0 auto; background:#ffffff; border-radius:16px; border:1px solid #e5e7eb; overflow:hidden; }
+    .header { background:#0f172a; color:#ffffff; padding:20px 24px; }
+    .title { font-size:18px; font-weight:700; margin:0; }
+    .sub { font-size:13px; opacity:0.85; margin:6px 0 0 0; }
+    .content { padding:20px 24px; }
+    .section-title { font-size:16px; font-weight:700; margin:0 0 8px 0; }
+    .kvs { width:100%; border-collapse:collapse; margin:8px 0 16px; }
+    .kvs th, .kvs td { text-align:left; vertical-align:top; padding:10px 12px; border-top:1px solid #eef2f7; font-size:14px; }
+    .kvs th { width:200px; color:#334155; font-weight:600; background:#fafafa; }
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; font-weight:600; margin:4px 6px 0 0; }
+    .muted { color:#475569; }
+    .divider { height:1px; background:#f1f5f9; margin:16px 0; }
+    .foot { padding:16px 24px 22px; background:#f8fafc; color:#64748b; font-size:12px; text-align:center; }
+    .blockquote { border-left:4px solid #e2e8f0; padding:10px 12px; background:#f8fafc; border-radius:8px; white-space:pre-line; }
+    @media (max-width: 480px) {
+      .header, .content, .foot { padding-left:16px; padding-right:16px; }
+      .kvs th { width:140px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h2 class="title">New Application Submission</h2>
+        <p class="sub">You’ve received a new application!</p>
+      </div>
+      <div class="content">
+        <h3 class="section-title">Applicant Details</h3>
+        <table class="kvs">
+          <tr>
+            <th>First Name</th>
+            <td>{{firstName}}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{{lastName}}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{email}}</td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td>{{phone}}</td>
+          </tr>
+          <tr>
+            <th>Country</th>
+            <td>{{country}}</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>{{city}}</td>
+          </tr>
+          <tr>
+            <th>Age Range</th>
+            <td>{{ageRange}}</td>
+          </tr>
+          <tr>
+            <th>Occupation</th>
+            <td>{{occupation}}</td>
+          </tr>
+        </table>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Course Details</h3>
+        <table class="kvs">
+          <tr>
+            <th>Course Title</th>
+            <td>{{courseTitle}}</td>
+          </tr>
+          <tr>
+            <th>Course ID</th>
+            <td>{{courseId}}</td>
+          </tr>
+          {{#if fsa}}
+          <tr>
+            <th>Primary Goal </th>
+            <td>{{fsa.primaryGoal}}</td>
+          </tr>
+          <tr>
+            <th>Finance Experience </th>
+            <td>{{fsa.financeExperience}}</td>
+          </tr>
+          <tr>
+            <th>Preferred Cohort </th>
+            <td>{{fsa.preferredCohort}}</td>
+          </tr>
+          {{/if}}
+          {{#if moneyPlaybook}}
+          <tr>
+            <th>Money Challenge </th>
+            <td>{{moneyPlaybook.moneyChallenge}}</td>
+          </tr>
+          <tr>
+            <th>Money Management Style </th>
+            <td>{{moneyPlaybook.moneyManagementStyle}}</td>
+          </tr>
+          <tr>
+            <th>Course Outcome </th>
+            <td>{{moneyPlaybook.courseOutcome}}</td>
+          </tr>
+          <tr>
+            <th>Preferred Cohort </th>
+            <td>{{moneyPlaybook.preferredCohort}}</td>
+          </tr>
+          {{/if}}
+          {{#if leavingHome}}
+          <tr>
+            <th>Interest in Leaving Home </th>
+            <td>{{leavingHome.interestInLeavingHome}}</td>
+          </tr>
+          <tr>
+            <th>Struggle Area </th>
+            <td>{{leavingHome.struggleArea}}</td>
+          </tr>
+          <tr>
+            <th>Challenge Approach </th>
+            <td>{{leavingHome.challengeApproach}}</td>
+          </tr>
+          <tr>
+            <th>Preferred Cohort </th>
+            <td>{{leavingHome.preferredCohort}}</td>
+          </tr>
+          {{/if}}
+        </table>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Custom Message</h3>
+        <div class="blockquote">{{message}}</div>
+      </div>
+      <div class="foot">
+        <p class="muted">This email was automatically generated to inform the team of a new application submission. Please review the details promptly.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

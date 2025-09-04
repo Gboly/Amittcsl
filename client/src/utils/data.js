@@ -205,6 +205,7 @@ export const fsCoursesApplication = {
     fields: [
       {
         label: "Primary Goal",
+        fieldName: "primaryGoal",
         type: "radio",
         options: [
           "Learn to budget",
@@ -217,11 +218,13 @@ export const fsCoursesApplication = {
       },
       {
         label: "Current Experience with Personal Finance",
+        fieldName: "financeExperience",
         type: "radio",
         options: ["Beginner", "Intermediate", "Advanced"],
       },
       {
         label: "Preferred Cohort",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -231,9 +234,14 @@ export const fsCoursesApplication = {
   "money-playbook": {
     title: "Money Playbook",
     fields: [
-      { label: "What’s your biggest money challenge right now?", type: "text" },
+      {
+        label: "What’s your biggest money challenge right now?",
+        fieldName: "moneyChallenge",
+        type: "text",
+      },
       {
         label: "Current Money Management Style",
+        fieldName: "moneyManagementStyle",
         type: "radio",
         options: [
           "I don’t track my spending",
@@ -243,6 +251,7 @@ export const fsCoursesApplication = {
       },
       {
         label: "What outcome do you want from this course?",
+        fieldName: "courseOutcome",
         type: "radio",
         options: [
           "Track spending with purpose",
@@ -253,6 +262,7 @@ export const fsCoursesApplication = {
       },
       {
         label: "Cohort / Date",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },
@@ -262,9 +272,14 @@ export const fsCoursesApplication = {
   "leaving-home": {
     title: "Leaving Home",
     fields: [
-      { label: "Why are you interested in Leaving Home?", type: "text" },
+      {
+        label: "Why are you interested in Leaving Home?",
+        fieldName: "interestInLeavingHome",
+        type: "text",
+      },
       {
         label: "Which area do you struggle with most?",
+        fieldName: "struggleArea",
         type: "radio",
         options: [
           "Budgeting, saving & credit basics",
@@ -275,6 +290,7 @@ export const fsCoursesApplication = {
       },
       {
         label: "How do you currently approach challenges?",
+        fieldName: "challengeApproach",
         type: "radio",
         options: [
           "I avoid them",
@@ -284,6 +300,7 @@ export const fsCoursesApplication = {
       },
       {
         label: "Cohort / Date",
+        fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
       },

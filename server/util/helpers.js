@@ -189,3 +189,53 @@ export function setCoursesApplicationData(formData) {
 
   return { ...baseData, ...courseSpecific };
 }
+
+export const setFsCoursesData = (formData) => {
+  const courseData = {};
+
+  // Map selectedCourse to courseTitle
+  switch (formData.courseId) {
+    case "fsa":
+      courseData.courseTitle = "Financial Stewards Academy";
+      courseData.fsa = {
+        primaryGoal: formData.primaryGoal,
+        financeExperience: formData.financeExperience,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+    case "money-playbook":
+      courseData.courseTitle = "Money Playbook";
+      courseData.moneyPlaybook = {
+        moneyChallenge: formData.moneyChallenge,
+        moneyManagementStyle: formData.moneyManagementStyle,
+        courseOutcome: formData.courseOutcome,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+    case "leaving-home":
+      courseData.courseTitle = "Leaving Home";
+      courseData.leavingHome = {
+        interestInLeavingHome: formData.interestInLeavingHome,
+        struggleArea: formData.struggleArea,
+        challengeApproach: formData.challengeApproach,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+    default:
+      throw new Error("Invalid course ID");
+  }
+
+  // Map other personal fields from formData
+  courseData.firstName = formData.firstName;
+  courseData.lastName = formData.lastName || "";
+  courseData.email = formData.email;
+  courseData.phone = formData.phone;
+  courseData.country = formData.country;
+  courseData.city = formData.city;
+  courseData.ageRange = formData.ageRange || "";
+  courseData.occupation = formData.occupation || "";
+  courseData.message = formData.message || "";
+  courseData.courseId = formData.courseId;
+
+  return courseData;
+};

@@ -4,10 +4,12 @@ import React, { useState, useEffect } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import "./page.css";
+import { useCreateFeeApplicationMutation } from "@/features/api/applicationApi";
 
 const courseFields = [
   {
     label: "Main Goal",
+    fieldName: "mainGoal",
     type: "radio",
     options: [
       "Reduce financial stress",
@@ -20,19 +22,21 @@ const courseFields = [
   },
   {
     label: "Current Experience with Personal Finance",
+    fieldName: "experienceLevel",
     type: "radio",
     options: ["Beginner", "Intermediate", "Advanced"],
   },
   {
     label: "Preferred Cohort",
+    fieldName: "cohort",
     type: "select",
     options: ["September 2025", "November 2025"],
   },
 ];
 
 const ApplicationPage = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
+  const [submit, { data: submittedData }] = useCreateFeeApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -40,10 +44,10 @@ const ApplicationPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    submit(formData);
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <div className="success-state">
         <CheckCircleOutlineIcon className="icon success" />
@@ -157,7 +161,9 @@ const ApplicationPage = () => {
                   <input
                     type="text"
                     required
-                    onChange={(e) => handleChange(field.label, e.target.value)}
+                    onChange={(e) =>
+                      handleChange(field.fieldName, e.target.value)
+                    }
                   />
                 )}
                 {field.type === "radio" && (
@@ -166,9 +172,9 @@ const ApplicationPage = () => {
                       <label key={opt} className="radio-item">
                         <input
                           type="radio"
-                          name={field.label}
+                          name={field.fieldName}
                           value={opt}
-                          onChange={() => handleChange(field.label, opt)}
+                          onChange={() => handleChange(field.fieldName, opt)}
                         />
                         <span className="radio-label">{opt}</span>
                       </label>
@@ -178,7 +184,9 @@ const ApplicationPage = () => {
                 {field.type === "select" && (
                   <select
                     required
-                    onChange={(e) => handleChange(field.label, e.target.value)}
+                    onChange={(e) =>
+                      handleChange(field.fieldName, e.target.value)
+                    }
                   >
                     <option value="">Select</option>
                     {field.options.map((opt) => (
@@ -199,14 +207,8 @@ const ApplicationPage = () => {
 
           <div className="form-group checkbox">
             <label>
-              <input type="checkbox" required /> I agree to be contacted via the
-              email I provided.
-            </label>
-          </div>
-          <div className="form-group checkbox">
-            <label>
-              <input type="checkbox" required /> I have read and accept the
-              privacy notice.
+              <input type="checkbox" required /> I hereby confirm that the
+              information provided above is true and accurate.
             </label>
           </div>
 

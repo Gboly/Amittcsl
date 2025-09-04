@@ -67,9 +67,9 @@ export const extendedApplicationApiSlice = apiSlice.injectEndpoints({
       },
       invalidatesTags: [{ type: "Application", id: "list" }],
     }),
-    createFadApplication: builder.mutation({
+    createFeeApplication: builder.mutation({
       query: (credentials) => ({
-        url: "/application/fad",
+        url: "/application/fee",
         method: "POST",
         body: credentials,
         formData: true,
@@ -115,4 +115,5 @@ export const {
   useCreateFadApplicationMutation,
   useCreateCoursesApplicationMutation,
   useCreateSsmApplicationMutation,
+  useCreateFeeApplicationMutation,
 } = extendedApplicationApiSlice;

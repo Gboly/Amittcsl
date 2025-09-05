@@ -2,24 +2,19 @@ import mongoose from "mongoose";
 
 const fadApplicationSchema = new mongoose.Schema(
   {
-    // Personal Information
-    prefix: {
+    // Organisation Information
+    organisationName: { type: String, required: true },
+    entityType: {
       type: String,
-      enum: ["Mr", "Mrs", "Ms", "Dr"],
+      enum: ["SME", "Corporate Organisation", "Government Agency", "Other"],
       required: true,
     },
-    name: { type: String, required: true },
-    middleName: { type: String },
-    surname: { type: String, required: true },
-    gender: {
-      type: String,
-      enum: ["Male", "Female", "Other"],
-      required: true,
-    },
-    dob: { type: Date, required: true },
-    address: { type: String, required: true },
+    contactPerson: { type: String, required: true }, // full name of contact person
+    designation: { type: String, required: true }, // role of the contact person
+    officeAddress: { type: String, required: true },
     phone: { type: String, required: true },
     email: { type: String, required: true },
+    website: { type: String }, // optional
 
     // Services Required (checkboxes)
     serviceCapitalFunding: { type: Boolean, default: false },
@@ -65,7 +60,7 @@ const fadApplicationSchema = new mongoose.Schema(
     customMessage: { type: String },
 
     // Declaration
-    declarationConfirmed: { type: Boolean, required: true, default: false },
+    // declarationConfirmed: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }
 );

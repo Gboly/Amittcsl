@@ -87,15 +87,14 @@ export const setSppApplicationData = (formData) => ({
 });
 
 export const setFadApplicationData = (formData) => ({
-  prefix: formData.prefix,
-  name: formData.name,
-  middleName: formData.middleName,
-  surname: formData.surname,
-  gender: formData.gender,
-  dob: formData.dob,
-  address: formData.address,
+  organisationName: formData.organisationName,
+  entityType: formData.entityType,
+  contactPerson: formData.contactPerson,
+  designation: formData.designation,
+  officeAddress: formData.officeAddress,
   phone: formData.phone,
   email: formData.email,
+  website: formData.website,
   services: {
     capitalFunding: formData.serviceCapitalFunding || false,
     portfolioDiversification: formData.servicePortfolioDiversification || false,

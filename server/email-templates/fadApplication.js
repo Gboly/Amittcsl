@@ -50,11 +50,27 @@ export const fadApplicationTemplate = `<html lang="en" xmlns="http://www.w3.org/
 
         <tr>
           <td class="content">
-            <p class="section-title">Applicant Summary</p>
+            <p class="section-title">Organisation Summary</p>
             <table class="kvs" role="presentation">
               <tr>
-                <th>Full Name</th>
-                <td>{{prefix}} {{name}}{{#if middleName}} {{middleName}}{{/if}} {{surname}}</td>
+                <th>Organisation / Business</th>
+                <td>{{organisationName}}</td>
+              </tr>
+              <tr>
+                <th>Entity Type</th>
+                <td>{{entityType}}</td>
+              </tr>
+              <tr>
+                <th>Contact Person</th>
+                <td>{{contactPerson}}</td>
+              </tr>
+              <tr>
+                <th>Designation / Role</th>
+                <td>{{designation}}</td>
+              </tr>
+              <tr>
+                <th>Office Address</th>
+                <td>{{officeAddress}}</td>
               </tr>
               <tr>
                 <th>Email</th>
@@ -64,18 +80,12 @@ export const fadApplicationTemplate = `<html lang="en" xmlns="http://www.w3.org/
                 <th>Phone</th>
                 <td><a href="tel:{{phone}}">{{phone}}</a></td>
               </tr>
+              {{#if website}}
               <tr>
-                <th>Gender</th>
-                <td>{{gender}}</td>
+                <th>Website</th>
+                <td><a href="{{website}}">{{website}}</a></td>
               </tr>
-              <tr>
-                <th>Date of Birth</th>
-                <td>{{dob}}</td>
-              </tr>
-              <tr>
-                <th>Address</th>
-                <td>{{address}}</td>
-              </tr>
+              {{/if}}
               <tr>
                 <th>Declaration</th>
                 <td>

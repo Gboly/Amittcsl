@@ -26,13 +26,15 @@ export default function Footer() {
               width={80}
               height={80}
             />
-            <h3>Amitt Training & Consulting Services Limited</h3>
+            <h3>AMITT Training & Consulting Services Limited</h3>
           </header>
           <p>
-            We provide training, consulting, and advisory services that empower
-            individuals, startups, and organizations to grow. From financial
-            literacy and customer service to startup funding and personal
-            development, we deliver practical solutions for lasting impact.
+            We provide training, consulting, advisory and services that empower
+            individuals/group, SMEs, and organizations to grow. We provide and
+            support a range of services from professional courses, financial
+            literacy, financial advisory, supplies & procurement, Corporate
+            gifts and travel & tours. We deliver practical solutions for lasting
+            impact.
           </p>
           <p className="rc-no">RC 87363936</p>
         </section>
@@ -49,7 +51,7 @@ export default function Footer() {
         <section className="stay-informed">
           <header>Stay Informed</header>
           <p>
-            Be the first to know about funding programs, investor trends, and
+            Be the first to know about our programs, investor trends, and
             curated opportunities.
           </p>
           <SubscriptionForm />

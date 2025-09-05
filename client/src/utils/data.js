@@ -52,7 +52,7 @@ export const services = [
     title: "Corporate gifts",
     image:
       "https://res.cloudinary.com/dirwr8cde/image/upload/v1756412965/Amitt/gift_ansp09.jpg",
-    desc: "We help organizations strengthen relationships and foster a culture of appreciation through thoughtful and tailored gifting solutions. Whether it’s Christmas, New Year, birthdays, anniversaries, or company milestones, our curated gifts leave a lasting impression.",
+    desc: "We help organizations strengthen relationships and foster a culture of appreciation through thoughtful and tailored gifting solutions. Whether it’s Christmas, New Year, Sallah, Anniversaries, or Company milestones, our curated gifts leave a lasting impression.",
     link: "/services/gifts",
   },
 ];
@@ -103,15 +103,15 @@ export const customMessageDetails = [
 
 export const servicesParagraphs = [
   {
-    text: "At Amitt Training and Consulting Limited , we provide a unique blend of training, consulting, and advisory solutions designed to empower individuals, startups, and organizations to achieve sustainable growth. Our services are rooted in practical strategies, hands-on guidance, and real-world experience, ensuring that every client gains both the knowledge and confidence to take decisive steps toward their goals. We combine professional expertise with a people-first approach, delivering results that are impactful, measurable, and lasting.",
+    text: "At Amitt Training and Consulting Services LTD , we provide a unique blend of training, consulting, and advisory solutions designed to empower individual/groups, SME startups and organizations to achieve sustainable growth. Our services are rooted in practical strategies, hands-on guidance and real-world experience, ensuring that every client gains both the knowledge and confidence to take decisive steps toward their goals. We combine professional expertise with a people-first approach, delivering results that are impactful, measurable, and lasting.",
     image: "/service-abstract-1.png",
   },
   {
-    text: "Our work spans across multiple focus areas, from financial education to professional skills development, startup funding facilitation, and curated lifestyle experiences. We equip individuals and teams with essential knowledge through programs like our financial literacy academy, customer service training, and personal development courses, while also supporting startup founders in navigating the often complex process of securing venture capital. Beyond professional growth, we provide tailored travel and tour experiences that foster exposure, networking, and cultural enrichment, adding a unique dimension to our holistic approach to development.",
+    text: "Our work spans across multiple areas,  from financial education to professional skills development, financial advisory, supplies & procurement  and curated lifestyle experiences. We equip and service individuals, teams and organisation  with essential knowledge through programs like our financial literacy academy, professional courses, financial advisory, supply & procurement and corporate gifts. Beyond all the above, we provide tailored travel and tour experiences that foster exposure, networking, and cultural enrichment, adding a unique dimension to our holistic approach to development.",
     image: "/service-abstract-2.png",
   },
   {
-    text: "Whether you’re an individual looking to strengthen your skills, a company aiming to upskill your workforce, or a founder ready to take your venture to the next level, our services are built to meet you where you are — and take you further. We don’t just deliver training or connect you to opportunities; we partner with you on the journey, ensuring that each program, consultation, or engagement is aligned with your goals and produces meaningful, long-term results.",
+    text: "Whether you’re an individual/group looking to strengthen your skills, a company aiming to upskill your workforce, or a founder ready to take your venture to the next level, our services are built to meet you where you are and take you further. We don’t just deliver training or connect you to opportunities; we partner with you on the journey, ensuring that each program, consultation, services or engagement is aligned with your goals and produces meaningful long-term results.",
     image: "/service-abstract-3.png",
   },
 ];

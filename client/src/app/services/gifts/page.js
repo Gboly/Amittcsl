@@ -43,8 +43,8 @@ export default function CorporateGiftsPage() {
             <p>
               We help organizations strengthen relationships and foster a
               culture of appreciation through thoughtful and tailored gifting
-              solutions. Whether it’s Christmas, New Year, birthdays,
-              anniversaries, or company milestones, our curated gifts leave a
+              solutions. Whether it’s Christmas, New Year, Sallah,
+              Anniversaries, or Company milestones, our curated gifts leave a
               lasting impression.
             </p>
             <em>Professional. Personal. Memorable.</em>

@@ -52,13 +52,13 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2>A Partner in Growth, From Mindset to Market</h2>
+          <h2>
+            A Partner in Growth, Services, Advisory, Supplies and Experience
+          </h2>
           <p>
-            {`We are a multi-service training and consulting company providing
-            capacity-building programs, financial education, startup funding
-            facilitation, and tailored travel solutions. Whether you're an
-            individual, a startup, or an established company, we offer the
-            tools, strategies, and connections to help you move forward.`}
+            {`We are a multi-service training, consulting and services company providing
+            capacity-building programs, financial education, financial advisory, supply & procurement, corporate gifts and tailored travel solutions. Whether you're an individual
+            /group of individuals, an established company, SME or a startup, we offer the services, tools, strategies, and connections to add value to your establishment and progress further.`}
           </p>
           <CTAButton href="/services" label="Discover How We Can Help →" />
         </motion.div>

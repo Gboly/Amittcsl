@@ -49,6 +49,7 @@ export default function Contact() {
             <div className="contact-column">
               <MailIcon style={{ color: "#457b9d", fontSize: "2rem" }} />
               <p>info@amittcsl.com</p>
+              <p>mlainsights@amittcsl.com</p>
             </div>
           </aside>
         </div>

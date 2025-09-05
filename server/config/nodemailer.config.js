@@ -1,22 +1,22 @@
 import nodemailer from "nodemailer";
-import nodemailerExpressHandlebars from "nodemailer-express-handlebars";
+//import nodemailerExpressHandlebars from "nodemailer-express-handlebars";
 import dotenv from "dotenv";
 dotenv.config();
 
-import fs from "fs";
-import path from "path";
+// import fs from "fs";
+// import path from "path";
 
-const templatePath = path.join(
-  process.cwd(), // repo root on Vercel
-  "server",
-  "email-templates",
-  "ssmApplication.handlebars"
-);
+// const templatePath = path.join(
+//   process.cwd(), // repo root on Vercel
+//   "server",
+//   "email-templates",
+//   "ssmApplication.handlebars"
+// );
 
-if (!fs.existsSync(templatePath)) {
-  console.error("Template not found at:", templatePath);
-  // optionally try a fallback based on __dirname if your file layout differs
-}
+// if (!fs.existsSync(templatePath)) {
+//   console.error("Template not found at:", templatePath);
+//   // optionally try a fallback based on __dirname if your file layout differs
+// }
 
 //const source = fs.readFileSync(templatePath, "utf8");
 
@@ -34,13 +34,13 @@ export const transporter = nodemailer.createTransport({
   // socketTimeout: 60000, // Set socket timeout to 60 seconds
 });
 
-const handlebarOptions = {
-  viewEngine: {
-    extName: ".handlebars",
-    partialsDir: templatePath, // Path where your Handlebars templates are stored
-    defaultLayout: false,
-  },
-  viewPath: templatePath,
-};
+// const handlebarOptions = {
+//   viewEngine: {
+//     extName: ".handlebars",
+//     partialsDir: templatePath, // Path where your Handlebars templates are stored
+//     defaultLayout: false,
+//   },
+//   viewPath: templatePath,
+// };
 
-transporter.use("compile", nodemailerExpressHandlebars(handlebarOptions));
+//transporter.use("compile", nodemailerExpressHandlebars(handlebarOptions));

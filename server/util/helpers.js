@@ -1,22 +1,51 @@
 import { transporter } from "../config/nodemailer.config.js";
 import dotenv from "dotenv";
 dotenv.config();
+import exphbs from "express-handlebars";
+import { ssmApplicationTemplate } from "../email-templates/ssmApplication.js";
+import { sppApplicationTemplate } from "../email-templates/sppApplication.js";
+import { giftsApplicationTemplate } from "../email-templates/giftsApplication.js";
+import { fsApplicationTemplate } from "../email-templates/fsApplication.js";
+import { feeApplicationTemplate } from "../email-templates/feeApplication.js";
+import { fadApplicationTemplate } from "../email-templates/fadApplication.js";
+import { coursesApplicationTemplate } from "../email-templates/coursesApplication.js";
 
+// Register an in-memory Handlebars instance
+const hbs = exphbs.create({});
+
+// Map templates
+const templates = {
+  ssmApplication: ssmApplicationTemplate,
+  sppApplication: sppApplicationTemplate,
+  giftsApplication: giftsApplicationTemplate,
+  fsApplication: fsApplicationTemplate,
+  feeApplication: feeApplicationTemplate,
+  fadApplication: fadApplicationTemplate,
+  coursesApplication: coursesApplicationTemplate,
+};
 export const sendApplicationEmail = async (formData, type, template) => {
+  const source = templates[template];
+  if (!source) {
+    throw new Error(`Template "${template}" not found`);
+  }
+
+  // Compile in memory
+  const compiled = hbs.handlebars.compile(source);
+  const html = compiled(formData);
+
   const mailOptions = {
     from: '"Amittcsl Dev" <dev@amittcsl.com>', // Your email address
     to: "dev@amittcsl.com", // Recipient's email address
     subject: `New Application Submitted: ${type}`,
-    template, // Name of the template you created
-    context: formData, // Pass the form data to the template
+    html,
   };
 
   // Send the email
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent:", info.response);
+    console.log("✅ Email sent:", info.response);
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("❌ Error sending email:", error);
   }
 };
 

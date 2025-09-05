@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+export const ssmApplicationTemplate = `<html>
   <head>
     <meta charset="utf-8" />
     <style>
@@ -81,4 +80,4 @@
       </div>
     </div>
   </body>
-</html>
+</html>`;

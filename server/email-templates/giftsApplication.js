@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+export const giftsApplicationTemplate =`<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,4 +37,4 @@
 
   <p><strong>Custom Message:</strong> {{customMessage}}</p>
 </body>
-</html>
+</html>`

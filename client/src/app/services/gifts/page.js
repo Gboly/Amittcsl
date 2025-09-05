@@ -53,7 +53,7 @@ export default function CorporateGiftsPage() {
           </div>
           <div className="image">
             <Image
-              src="/corporate-gifts.jpg"
+              src="https://res.cloudinary.com/dirwr8cde/image/upload/v1756412965/Amitt/gift_ansp09.jpg"
               alt="Corporate Gifts"
               width={400}
               height={400}

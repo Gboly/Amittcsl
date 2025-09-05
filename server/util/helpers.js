@@ -9,6 +9,7 @@ import { fsApplicationTemplate } from "../email-templates/fsApplication.js";
 import { feeApplicationTemplate } from "../email-templates/feeApplication.js";
 import { fadApplicationTemplate } from "../email-templates/fadApplication.js";
 import { coursesApplicationTemplate } from "../email-templates/coursesApplication.js";
+import { contactTemplate } from "../email-templates/contact.js";
 
 // Register an in-memory Handlebars instance
 const hbs = exphbs.create({});
@@ -37,6 +38,27 @@ export const sendApplicationEmail = async (formData, type, template) => {
     from: '"Amittcsl Dev" <dev@amittcsl.com>', // Your email address
     to: "dev@amittcsl.com", // Recipient's email address
     subject: `New Application Submitted: ${type}`,
+    html,
+  };
+
+  // Send the email
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Email sent:", info.response);
+  } catch (error) {
+    console.error("❌ Error sending email:", error);
+  }
+};
+
+export const sendContactEmail = async (formData) => {
+  // Compile in memory
+  const compiled = hbs.handlebars.compile(contactTemplate);
+  const html = compiled(formData);
+
+  const mailOptions = {
+    from: '"Amittcsl Dev" <dev@amittcsl.com>', // Your email address
+    to: "dev@amittcsl.com", // Recipient's email address
+    subject: `A client has just contacted us`,
     html,
   };
 

@@ -8,6 +8,6 @@ export const apiSlice = createApi({
         ? "http://localhost:5000"
         : "https://amittcsl-backend.vercel.app",
   }),
-  tagTypes: ["Application"],
+  tagTypes: ["Application", "Contact"],
   endpoints: (builder) => ({}),
 });

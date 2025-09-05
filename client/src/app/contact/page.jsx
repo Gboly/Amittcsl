@@ -8,8 +8,27 @@ import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useContactTheTeamMutation } from "@/features/api/contactApi";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({});
+
+  const [submit, { isLoading, data }] = useContactTheTeamMutation();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submit(formData);
+  };
+
+  useEffect(() => {
+    isLoading && alert("Contacting the team.");
+    if (data) {
+      alert("You have successfully contacted the team.");
+      setFormData({});
+    }
+  }, [data, isLoading]);
+
   return (
     <main className="contact">
       {/* Intro Section */}
@@ -79,14 +98,16 @@ export default function Contact() {
       {/* Message Form Section */}
       <section className="message-form">
         <h2>Send Us A Message</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           {customMessageDetails.map(({ name, label }) => (
             <TextInput
               key={name}
               name={name}
               label={label}
-              value={""}
-              handleInput={() => {}}
+              value={formData[name]}
+              handleInput={(e) =>
+                setFormData({ ...formData, [name]: e.target.value })
+              }
             />
           ))}
           <div className="submit">

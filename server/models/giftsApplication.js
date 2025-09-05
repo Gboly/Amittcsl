@@ -15,8 +15,8 @@ const giftsApplicationSchema = new mongoose.Schema({
   preferredGiftType: { type: String },
   milestoneType: { type: String },
   personalizedItems: { type: String },
-  recipientsAge: { type: String },
-  giftType: { type: String },
+  awardCategory: { type: String },
+  preferredAwardType: { type: String },
   preferredHampers: { type: String },
   brandingPreferences: { type: String },
 

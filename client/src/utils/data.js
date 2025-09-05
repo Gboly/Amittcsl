@@ -527,20 +527,32 @@ export const giftCategories = {
       },
     ],
   },
-  birthday: {
-    title: "Birthday Surprises",
+  staffAppreciation: {
+    title: "Staff Appreciation & Awards",
     fields: [
       {
-        label: "Recipient's Age",
-        fieldName: "recipientsAge",
-        type: "select",
-        options: ["Under 18", "18-30", "31-50", "51+"],
+        label: "Award Category",
+        fieldName: "awardCategory",
+        type: "radio",
+        options: [
+          "Employee of the Month",
+          "Best Team Player",
+          "Outstanding Performance",
+          "Years of Service",
+          "Other",
+        ],
       },
       {
-        label: "Gift Type",
-        fieldName: "giftType",
-        type: "radio",
-        options: ["Personalized Gifts", "Gift Baskets", "Gift Cards"],
+        label: "Preferred Award Type",
+        fieldName: "preferredAwardType",
+        type: "select",
+        options: [
+          "Trophies/Plaques",
+          "Certificates",
+          "Gift Vouchers",
+          "Experience Packages",
+          "Other",
+        ],
       },
     ],
   },

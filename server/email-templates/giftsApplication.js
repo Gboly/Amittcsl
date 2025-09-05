@@ -1,4 +1,4 @@
-export const giftsApplicationTemplate =`<html lang="en">
+export const giftsApplicationTemplate = `<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +23,10 @@ export const giftsApplicationTemplate =`<html lang="en">
     <p><strong>Personalized Items:</strong> {{personalizedItems}}</p>
   {{/if}}
 
-  {{#if serviceBirthday}}
+  {{#if serviceStaffAppreciation}}
     <h3>Birthday Surprises Details</h3>
-    <p><strong>Recipient's Age:</strong> {{recipientsAge}}</p>
-    <p><strong>Gift Type:</strong> {{giftType}}</p>
+    <p><strong>Award Category:</strong> {{awardCategory}}</p>
+    <p><strong>Preferred Award Type:</strong> {{preferredAwardType}}</p>
   {{/if}}
 
   {{#if serviceHampers}}
@@ -37,4 +37,4 @@ export const giftsApplicationTemplate =`<html lang="en">
 
   <p><strong>Custom Message:</strong> {{customMessage}}</p>
 </body>
-</html>`
+</html>`;

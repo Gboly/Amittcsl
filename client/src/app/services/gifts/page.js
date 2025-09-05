@@ -9,10 +9,10 @@ import BrushIcon from "@mui/icons-material/Brush";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import LinkIcon from "@mui/icons-material/Link";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import CakeIcon from "@mui/icons-material/Cake";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import Image from "next/image";
 import Link from "next/link";
+import { MilitaryTech } from "@mui/icons-material";
 
 export default function CorporateGiftsPage() {
   return (
@@ -23,8 +23,10 @@ export default function CorporateGiftsPage() {
           <h1>Customized Corporate Gifts that Inspire & Delight</h1>
           <p>
             Show appreciation with premium gifts tailored for employees,
-            colleagues, and partners — perfect for holidays, birthdays,
-            anniversaries, and corporate milestones.
+            colleagues, partners, stakeholders and customers/Clients — perfect
+            for Christmas, New year, Sallah gifts, Stakeholders forum,
+            anniversaries, Staff appreciation/award events and Corporate
+            milestones.
           </p>
           <div className="hero-buttons">
             {/* <button className="btn-primary">Explore Gift Packages</button> */}
@@ -82,10 +84,11 @@ export default function CorporateGiftsPage() {
               </p>
             </div>
             <div className="card">
-              <CakeIcon fontSize="large" />
-              <h3>Birthday Surprises</h3>
+              <MilitaryTech fontSize="large" />
+              <h3>Staff Awards</h3>
               <p>
-                Make birthdays memorable with thoughtful, personalized gifts.
+                Celebrate and recognize your team with meaningful awards and
+                tokens of appreciation.
               </p>
             </div>
             <div className="card">

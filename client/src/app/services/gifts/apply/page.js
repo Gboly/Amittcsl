@@ -127,10 +127,13 @@ const ApplicationPage = () => {
               <input
                 type="checkbox"
                 onChange={() =>
-                  handleChange("serviceBirthday", !formData.serviceBirthday)
+                  handleChange(
+                    "serviceStaffAppreciation",
+                    !formData.serviceStaffAppreciation
+                  )
                 }
               />
-              Birthday Surprises
+              Staff Appreciation/Award
             </label>
             <label>
               <input
@@ -215,11 +218,11 @@ const ApplicationPage = () => {
             </>
           )}
 
-          {formData.serviceBirthday && (
+          {formData.serviceStaffAppreciation && (
             <>
-              <h2>{giftCategories.birthday.title} Details</h2>
+              <h2>{giftCategories.staffAppreciation.title} Details</h2>
               <div className="service-section">
-                {giftCategories.birthday.fields.map((field, idx) => (
+                {giftCategories.staffAppreciation.fields.map((field, idx) => (
                   <div className="form-group" key={idx}>
                     <label>{field.label}</label>
                     {field.type === "select" && (

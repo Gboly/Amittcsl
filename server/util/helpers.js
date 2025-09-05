@@ -50,11 +50,15 @@ export const sendApplicationEmail = async (formData, type, template) => {
 };
 
 export const setSppApplicationData = (formData) => ({
-  prefix: formData.prefix,
-  name: formData.name,
-  surname: formData.surname,
+  organisationName: formData.organisationName,
+  entityType: formData.entityType, // "SME" | "Corporate Organisation" | "Government Agency" | "Other"
+  contactPerson: formData.contactPerson, // Full name of the primary contact
+  designation: formData.designation, // Role/Title of the contact
   email: formData.email,
   phone: formData.phone,
+  officeAddress: formData.officeAddress,
+  website: formData.website, // optional
+
   services: {
     sourcingVendor: formData.serviceSourcingVendor || false,
     procurementManagement: formData.serviceProcurementManagement || false,

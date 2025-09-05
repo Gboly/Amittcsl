@@ -2,7 +2,7 @@ export const sppApplicationTemplate = `<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Application Received</title>
+  <title>New Supply & Procurement Application</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,19 +59,25 @@ export const sppApplicationTemplate = `<html lang="en">
 <body>
   <div class="container">
     <div class="header">
-      <h1>New Application Received</h1>
+      <h1>New Supply & Procurement Application</h1>
     </div>
 
     <div class="content">
       <p><strong>Dear Team,</strong></p>
       <p>A new application has been received for our Supply & Procurement Service. Below are the details:</p>
 
-      <h3>Applicant Details:</h3>
+      <h3>Organisation Details:</h3>
       <ul>
-        <li><strong>Prefix:</strong> {{prefix}}</li>
-        <li><strong>Name:</strong> {{name}} {{surname}}</li>
+        <li><strong>Organisation / Business Name:</strong> {{organisationName}}</li>
+        <li><strong>Entity Type:</strong> {{entityType}}</li>
+        <li><strong>Contact Person:</strong> {{contactPerson}}</li>
+        <li><strong>Designation / Role:</strong> {{designation}}</li>
         <li><strong>Email:</strong> {{email}}</li>
         <li><strong>Phone:</strong> {{phone}}</li>
+        <li><strong>Office Address:</strong> {{officeAddress}}</li>
+        {{#if website}}
+          <li><strong>Website:</strong> {{website}}</li>
+        {{/if}}
       </ul>
 
       <h3>Services Requested:</h3>
@@ -116,6 +122,11 @@ export const sppApplicationTemplate = `<html lang="en">
           </div>
         {{/if}}
       </ul>
+
+      {{#if customMessage}}
+        <h3>Additional Message:</h3>
+        <p>{{customMessage}}</p>
+      {{/if}}
 
       <p>This is an automatic notification for your reference. Kindly review the application details.</p>
     </div>

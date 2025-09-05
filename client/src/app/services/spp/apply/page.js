@@ -114,35 +114,46 @@ const ApplicationPage = () => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <h2>Personal Information</h2>
+          <h2>Organisation Information</h2>
           <div className="grid-2">
             <div className="form-group">
-              <label>Prefix *</label>
-              <select
-                required
-                onChange={(e) => handleChange("prefix", e.target.value)}
-              >
-                <option value="">Select</option>
-                <option>Mr</option>
-                <option>Mrs</option>
-                <option>Ms</option>
-                <option>Dr</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Name *</label>
+              <label>Organisation / Business Name *</label>
               <input
                 type="text"
                 required
-                onChange={(e) => handleChange("name", e.target.value)}
+                onChange={(e) =>
+                  handleChange("organisationName", e.target.value)
+                }
               />
             </div>
             <div className="form-group">
-              <label>Surname *</label>
+              <label>Type of Entity *</label>
+              <select
+                required
+                onChange={(e) => handleChange("entityType", e.target.value)}
+              >
+                <option value="">Select</option>
+                <option>SME</option>
+                <option>Corporate Organisation</option>
+                <option>Government Agency</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Contact Person *</label>
+              <input
+                type="text"
+                placeholder="Full Name of Contact Person"
+                required
+                onChange={(e) => handleChange("contactPerson", e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Designation / Role *</label>
               <input
                 type="text"
                 required
-                onChange={(e) => handleChange("surname", e.target.value)}
+                onChange={(e) => handleChange("designation", e.target.value)}
               />
             </div>
             <div className="form-group">
@@ -160,6 +171,22 @@ const ApplicationPage = () => {
                 placeholder="+234..."
                 required
                 onChange={(e) => handleChange("phone", e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Office Address *</label>
+              <input
+                type="text"
+                required
+                onChange={(e) => handleChange("officeAddress", e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Website (if any)</label>
+              <input
+                type="url"
+                placeholder="https://example.com"
+                onChange={(e) => handleChange("website", e.target.value)}
               />
             </div>
           </div>

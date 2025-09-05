@@ -3,18 +3,23 @@ import mongoose from "mongoose";
 // Define schema for the application form
 const sppApplicationSchema = new mongoose.Schema(
   {
-    prefix: {
+    organisationName: {
       type: String,
       required: true,
     },
-    name: {
+    entityType: {
       type: String,
+      enum: ["SME", "Corporate Organisation", "Government Agency", "Other"],
       required: true,
     },
-    surname: {
+    contactPerson: {
       type: String,
       required: true,
-    },
+    }, // Full name of primary contact
+    designation: {
+      type: String,
+      required: true,
+    }, // Role of the contact person
     email: {
       type: String,
       required: true,
@@ -23,6 +28,14 @@ const sppApplicationSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    officeAddress: {
+      type: String,
+      required: true,
+    },
+    website: {
+      type: String,
+    }, // Optional
+
     services: {
       sourcingVendor: {
         type: Boolean,

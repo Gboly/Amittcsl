@@ -40,10 +40,11 @@ export default function SupplyProcurementPage() {
       {/* ======= Hero ======= */}
       <header className="sp-hero">
         <div className="sp-hero-content">
-          <h1>Reliable Supply & Procurement Solutions for Organizations</h1>
+          <h1>Reliable Supply & Procurement Solutions for Organisations</h1>
           <p>
-            We help organizations source, purchase, and deliver exactly what
-            they need — efficiently, transparently, and cost-effectively.
+            We help organisations, SMEs and groups source, purchase, and deliver
+            exactly what they need — efficiently, transparently, and
+            cost-effectively.
           </p>
           <div className="cta-row">
             <a href="/services/spp/apply" className="btn btn-primary">

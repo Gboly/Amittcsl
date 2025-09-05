@@ -105,9 +105,9 @@ export default function Page() {
           <div>
             <SavingsIcon /> Create an Emergency Fund
           </div>
-          <div>
+          {/* <div>
             <CreditScoreIcon /> Improve Credit Scores
-          </div>
+          </div> */}
           <div>
             <TrackChangesIcon /> Set Growth Goals
           </div>
@@ -122,10 +122,10 @@ export default function Page() {
         <h2>Course Delivery Format</h2>
         <div className="delivery-grid">
           <div>
-            <LanguageIcon /> 100% Online
+            <LanguageIcon /> Physical or Online
           </div>
           <div>
-            <EventIcon /> 4-Week Program
+            <EventIcon /> One day
           </div>
           <div>
             <AssignmentIcon /> Tools & Templates
@@ -184,12 +184,14 @@ export default function Page() {
             productivity.
           </h2>
           <nav className="cta-actions" aria-label="Final calls to action">
-            <Button variant="contained" color="secondary" className="btn-lg">
-              Schedule a Consultation
-            </Button>
-            <Button variant="outlined" className="btn-lg btn-outline-light">
+            <Link href={"/services/fee/apply"}>
+              <Button variant="contained" color="secondary" className="btn-lg">
+                Schedule Consultation
+              </Button>
+            </Link>
+            {/* <Button variant="outlined" className="btn-lg btn-outline-light">
               Request Pricing
-            </Button>
+            </Button> */}
           </nav>
         </div>
       </section>

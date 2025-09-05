@@ -36,7 +36,7 @@ export default function StockSharesPage() {
         <div className="hero-content">
           <h1>Take Control of Your Investments</h1>
           <p>
-            Streamlined stock & shares management designed to simplify
+            Streamlined stock, shares and mutual funds designed to simplify
             ownership, resolve legacy issues, and secure your future.
           </p>
           <div className="hero-buttons">
@@ -51,9 +51,9 @@ export default function StockSharesPage() {
       <section className="stocks-what">
         <h2>What We Do</h2>
         <p className="what-intro">
-          Our Stock & Shares Management service provides practical solutions for
-          individuals and businesses to regularize and optimize their
-          shareholdings. We resolve legacy challenges, streamline account
+          Our Stock, Shares and Mutual Funds service provides practical
+          solutions for individuals and businesses to regularize and optimize
+          their shareholdings. We resolve legacy challenges, streamline account
           access, and ensure compliance within capital market framework.
         </p>
         <div className="what-grid">

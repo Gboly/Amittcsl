@@ -199,7 +199,8 @@ export default function FSA() {
         <h2>Enrollment Details</h2>
         <ul>
           <li>
-            <strong>Program Duration:</strong> 3 Weeks
+            <strong>Program Duration:</strong> 2 Weekend (2 sessions over 2
+            Saturdays)
           </li>
           <li>
             <strong>Format:</strong> Live + Recorded Sessions

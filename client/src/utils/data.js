@@ -14,10 +14,10 @@ export const services = [
     link: "/services/fee",
   },
   {
-    title: "Stock and Shares Management",
+    title: "Stock, Shares and Mutual Funds",
     image:
       "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088970/Amitt/cst_tcxeit.png",
-    desc: "Stocks and Shares Management provides guidance and strategies for building and managing investment portfolios. We help you navigate the stock market with confidence, make informed decisions, and maximize returns while minimizing risks.",
+    desc: "Our Stock, Shares and Mutual Funds service provides guidance and strategies for building and managing investment portfolios. We help you navigate the stock market with confidence, make informed decisions, and maximize returns while minimizing risks.",
     link: "/services/ssm",
   },
   {
@@ -122,14 +122,15 @@ export const fsaCourses = [
     title: "Financial Stewards Academy",
     applicationLink: "/services/fsa/apply?course=fsa",
     shortDesc:
-      "A transformative 3-week course to equip you with the knowledge and tools to grow, preserve, and protect your wealth.",
+      "A transformative two -weekend course to equip you with the knowledge and tools to grow, preserve, and protect your wealth.",
     fullDesc: (
       <>
         <p>
           Financial Stewards Academy (FSA) is designed for anyone who wants to
-          grow and preserve their wealth. Over 3 weeks, we cover practical
-          financial skills, from saving better to investing wisely, protecting
-          wealth through trusts and wills, and planning for retirement.
+          grow and preserve their wealth. Over two Saturday weekend, we cover
+          practical financial skills, from saving better to investing wisely,
+          protecting wealth through trusts and wills, and planning for
+          retirement.
         </p>
         <ul>
           <li>Master the power of compounding</li>
@@ -191,8 +192,10 @@ export const fsaCourses = [
         </ul>
         <p>
           We also explore the three realms of knowledge:{" "}
-          <strong>YKYK, YKYDK, YDKYDK</strong> — encouraging curiosity and
-          growth.
+          <strong>
+            {`YKYK (you know you know), YKYDK (you know you don't know), YDKYDK (You don't know you don't know)`}{" "}
+          </strong>{" "}
+          — encouraging curiosity and growth.
         </p>
       </>
     ),

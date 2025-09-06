@@ -261,6 +261,7 @@ export const setFsCoursesData = (formData) => {
         preferredCohort: formData.preferredCohort,
       };
       break;
+
     case "money-playbook":
       courseData.courseTitle = "Money Playbook";
       courseData.moneyPlaybook = {
@@ -270,6 +271,7 @@ export const setFsCoursesData = (formData) => {
         preferredCohort: formData.preferredCohort,
       };
       break;
+
     case "leaving-home":
       courseData.courseTitle = "Leaving Home";
       courseData.leavingHome = {
@@ -279,6 +281,27 @@ export const setFsCoursesData = (formData) => {
         preferredCohort: formData.preferredCohort,
       };
       break;
+
+    case "investment-bootcamp":
+      courseData.courseTitle = "Investment Bootcamp";
+      courseData.investmentBootcamp = {
+        bootcampInterest: formData.bootcampInterest,
+        preferredInstruments: formData.preferredInstruments || [], // checkbox
+        hasCSCSAccount: formData.hasCSCSAccount,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
+    case "become-investor-ng-stocks":
+      courseData.courseTitle = "Become an Investor in Nigerian Stocks";
+      courseData.becomeInvestorNgStocks = {
+        stockExperience: formData.stockExperience,
+        investorMotivation: formData.investorMotivation,
+        curiousArea: formData.curiousArea,
+        preferredCohort: formData.preferredCohort,
+      };
+      break;
+
     default:
       throw new Error("Invalid course ID");
   }

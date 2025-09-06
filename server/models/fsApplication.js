@@ -25,6 +25,22 @@ const leavingHomeSchema = new Schema({
   preferredCohort: { type: String, default: "" },
 });
 
+// Subschema for "Investment Bootcamp"
+const investmentBootcampSchema = new Schema({
+  bootcampInterest: { type: String, default: "" },
+  preferredInstruments: { type: [String], default: [] }, // array since checkbox
+  hasCSCSAccount: { type: String, default: "" }, // "Yes" or "No"
+  preferredCohort: { type: String, default: "" },
+});
+
+// Subschema for "Become an Investor in Nigerian Stocks"
+const becomeInvestorNgStocksSchema = new Schema({
+  stockExperience: { type: String, default: "" },
+  investorMotivation: { type: String, default: "" },
+  curiousArea: { type: String, default: "" },
+  preferredCohort: { type: String, default: "" },
+});
+
 // Main Schema for fsCoursesApplication
 const fsCoursesApplicationSchema = new Schema({
   firstName: {
@@ -71,10 +87,12 @@ const fsCoursesApplicationSchema = new Schema({
     type: String,
     default: "",
   },
-  // Define separate fields for each course based on courseId
+  // Course-specific nested fields
   fsa: financialStewardsAcademySchema,
   moneyPlaybook: moneyPlaybookSchema,
   leavingHome: leavingHomeSchema,
+  investmentBootcamp: investmentBootcampSchema,
+  becomeInvestorNgStocks: becomeInvestorNgStocksSchema,
 });
 
 const FsCoursesApplication = mongoose.model(

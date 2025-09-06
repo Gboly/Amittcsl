@@ -8,7 +8,7 @@ export const saveFsApplication = async (req, res) => {
   try {
     const application = new FsCoursesApplication(formData);
     await application.save();
-    await sendApplicationEmail(formData, "Financial stewards", "fsApplication");
+    await sendApplicationEmail(formData, "Financial Academy", "fsApplication");
 
     return res.status(200).json(application);
   } catch (error) {

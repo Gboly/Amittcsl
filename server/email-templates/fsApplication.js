@@ -84,54 +84,108 @@ export const fsApplicationTemplate = `<html lang="en">
             <th>Course ID</th>
             <td>{{courseId}}</td>
           </tr>
+
+          {{!-- Financial Stewards Academy --}}
           {{#if fsa}}
           <tr>
-            <th>Primary Goal </th>
+            <th>Primary Goal</th>
             <td>{{fsa.primaryGoal}}</td>
           </tr>
           <tr>
-            <th>Finance Experience </th>
+            <th>Finance Experience</th>
             <td>{{fsa.financeExperience}}</td>
           </tr>
           <tr>
-            <th>Preferred Cohort </th>
+            <th>Preferred Cohort</th>
             <td>{{fsa.preferredCohort}}</td>
           </tr>
           {{/if}}
+
+          {{!-- Money Playbook --}}
           {{#if moneyPlaybook}}
           <tr>
-            <th>Money Challenge </th>
+            <th>Money Challenge</th>
             <td>{{moneyPlaybook.moneyChallenge}}</td>
           </tr>
           <tr>
-            <th>Money Management Style </th>
+            <th>Money Management Style</th>
             <td>{{moneyPlaybook.moneyManagementStyle}}</td>
           </tr>
           <tr>
-            <th>Course Outcome </th>
+            <th>Course Outcome</th>
             <td>{{moneyPlaybook.courseOutcome}}</td>
           </tr>
           <tr>
-            <th>Preferred Cohort </th>
+            <th>Preferred Cohort</th>
             <td>{{moneyPlaybook.preferredCohort}}</td>
           </tr>
           {{/if}}
+
+          {{!-- Leaving Home --}}
           {{#if leavingHome}}
           <tr>
-            <th>Interest in Leaving Home </th>
+            <th>Interest in Leaving Home</th>
             <td>{{leavingHome.interestInLeavingHome}}</td>
           </tr>
           <tr>
-            <th>Struggle Area </th>
+            <th>Struggle Area</th>
             <td>{{leavingHome.struggleArea}}</td>
           </tr>
           <tr>
-            <th>Challenge Approach </th>
+            <th>Challenge Approach</th>
             <td>{{leavingHome.challengeApproach}}</td>
           </tr>
           <tr>
-            <th>Preferred Cohort </th>
+            <th>Preferred Cohort</th>
             <td>{{leavingHome.preferredCohort}}</td>
+          </tr>
+          {{/if}}
+
+          {{!-- Investment Bootcamp --}}
+          {{#if investmentBootcamp}}
+          <tr>
+            <th>Why this Bootcamp?</th>
+            <td>{{investmentBootcamp.bootcampInterest}}</td>
+          </tr>
+          <tr>
+            <th>Preferred Instruments</th>
+            <td>
+              {{#if investmentBootcamp.preferredInstruments}}
+                {{#each investmentBootcamp.preferredInstruments}}
+                  <span class="badge">{{this}}</span>
+                {{/each}}
+              {{else}}
+                <span class="muted">No instruments selected</span>
+              {{/if}}
+            </td>
+          </tr>
+          <tr>
+            <th>Has CSCS Account?</th>
+            <td>{{investmentBootcamp.hasCSCSAccount}}</td>
+          </tr>
+          <tr>
+            <th>Preferred Cohort</th>
+            <td>{{investmentBootcamp.preferredCohort}}</td>
+          </tr>
+          {{/if}}
+
+          {{!-- Become an Investor in Nigerian Stocks --}}
+          {{#if becomeInvestorNgStocks}}
+          <tr>
+            <th>Stock Experience</th>
+            <td>{{becomeInvestorNgStocks.stockExperience}}</td>
+          </tr>
+          <tr>
+            <th>Motivation</th>
+            <td>{{becomeInvestorNgStocks.investorMotivation}}</td>
+          </tr>
+          <tr>
+            <th>Most Curious About</th>
+            <td>{{becomeInvestorNgStocks.curiousArea}}</td>
+          </tr>
+          <tr>
+            <th>Preferred Cohort</th>
+            <td>{{becomeInvestorNgStocks.preferredCohort}}</td>
           </tr>
           {{/if}}
         </table>

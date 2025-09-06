@@ -122,7 +122,7 @@ export const fsaCourses = [
     title: "Financial Stewards Academy",
     applicationLink: "/services/fsa/apply?course=fsa",
     shortDesc:
-      "A transformative two -weekend course to equip you with the knowledge and tools to grow, preserve, and protect your wealth.",
+      "A transformative two-weekend course to equip you with the knowledge and tools to grow, preserve, and protect your wealth.",
     fullDesc: (
       <>
         <p>
@@ -194,8 +194,83 @@ export const fsaCourses = [
           We also explore the three realms of knowledge:{" "}
           <strong>
             {`YKYK (you know you know), YKYDK (you know you don't know), YDKYDK (You don't know you don't know)`}{" "}
-          </strong>{" "}
+          </strong>
           — encouraging curiosity and growth.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 4,
+    title: "Investment Bootcamp",
+    applicationLink: "/services/fsa/apply?course=investment-bootcamp",
+    shortDesc:
+      "Hands-on guidance to register with a licensed stockbroker, open a CSCS account, and get ready to invest in Nigerian instruments.",
+    fullDesc: (
+      <>
+        <p>
+          This bootcamp is for you—whether in the Diaspora or in Nigeria—if you
+          want to register with a licensed stockbroker and obtain a CSCS account
+          so you can invest in Nigerian instruments:
+        </p>
+        <ul>
+          <li>Shares</li>
+          <li>FGN Savings Bond</li>
+          <li>Mutual Funds</li>
+          <li>Treasury Bills</li>
+          <li>Commercial Papers</li>
+        </ul>
+        <p>
+          It’s a fully guided, handholding experience—from matching you with a
+          licensed stockbroker based on your investment goals to helping you
+          complete the forms with practical tips that speed up approval and make
+          registration smooth.
+        </p>
+        <p>
+          By the end of the bootcamp, you’ll be set to participate in the next
+          edition of the FGN Savings Bond and other instruments (Treasury Bills,
+          Commercial Papers, Shares).
+        </p>
+        <p>
+          <strong>Important:</strong> Please read the requirements/prerequisites
+          and ensure you meet <strong>all</strong> of them before paying for the
+          bootcamp. <strong>No refunds</strong> after payment.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 5,
+    title: "Become an Investor in Nigerian Stocks",
+    applicationLink: "/services/fsa/apply?course=become-investor-ng-stocks",
+    shortDesc:
+      "A practical workshop to help you decide—clearly and confidently—whether to invest in Nigerian stocks and start earning dividends.",
+    fullDesc: (
+      <>
+        <p>
+          A focused, action-oriented workshop designed to help you make an{" "}
+          <em>informed</em> decision about investing in Nigerian stocks—so you
+          can grow wealth and earn dividends from Nigerian companies.
+        </p>
+        <p>
+          This is not a passive class. It’s a mission to help you become a
+          stockholder. An Investment Banker, a Chartered Stockbroker (faculty),
+          and a professional trader will guide you step by step.
+        </p>
+        <p>What you will learn:</p>
+        <ul>
+          <li>Understanding stocks</li>
+          <li>
+            How the Nigerian stock market works (explained in simple terms)
+          </li>
+          <li>Whether to open your stock investment account or not</li>
+          <li>How to make money via dividends and capital appreciation</li>
+        </ul>
+        <p>
+          Whether you’re a total beginner or have bought one or two stocks
+          before, you’ll get an overview of how people make real money in the
+          Nigerian market. By the end, you’ll be able to decide—confidently—if
+          investing on the Nigerian Exchange is right for you.
         </p>
       </>
     ),
@@ -306,6 +381,79 @@ export const fsCoursesApplication = {
         fieldName: "preferredCohort",
         type: "select",
         options: ["September 2025", "November 2025"],
+      },
+    ],
+  },
+
+  "investment-bootcamp": {
+    title: "Investment Bootcamp",
+    fields: [
+      {
+        label: "Why are you interested in this bootcamp?",
+        fieldName: "bootcampInterest",
+        type: "text",
+      },
+      {
+        label: "Which instruments are you most interested in?",
+        fieldName: "preferredInstruments",
+        type: "checkbox",
+        options: [
+          "Shares",
+          "FGN Savings Bond",
+          "Mutual Funds",
+          "Treasury Bills",
+          "Commercial Papers",
+        ],
+      },
+      {
+        label: "Do you already have a CSCS account?",
+        fieldName: "hasCSCSAccount",
+        type: "radio",
+        options: ["Yes", "No"],
+      },
+      {
+        label: "Cohort / Date",
+        fieldName: "preferredCohort",
+        type: "select",
+        options: ["October 2025", "December 2025"],
+      },
+    ],
+  },
+
+  "become-investor-ng-stocks": {
+    title: "Become an Investor in Nigerian Stocks",
+    fields: [
+      {
+        label: "What’s your current experience with stocks?",
+        fieldName: "stockExperience",
+        type: "radio",
+        options: [
+          "I’ve never bought stocks before",
+          "I’ve bought one or two stocks",
+          "I actively trade",
+        ],
+      },
+      {
+        label: "Why do you want to attend this workshop?",
+        fieldName: "investorMotivation",
+        type: "text",
+      },
+      {
+        label: "Which area are you most curious about?",
+        fieldName: "curiousArea",
+        type: "radio",
+        options: [
+          "Understanding how stocks work",
+          "Learning how the Nigerian Stock Exchange operates",
+          "Opening a stock investment account",
+          "Earning dividends and capital appreciation",
+        ],
+      },
+      {
+        label: "Cohort / Date",
+        fieldName: "preferredCohort",
+        type: "select",
+        options: ["October 2025", "December 2025"],
       },
     ],
   },

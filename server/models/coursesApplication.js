@@ -56,12 +56,19 @@ const ambitionSchema = new Schema({
 
 const professionalCourseApplicationSchema = new Schema(
   {
-    // Personal Information
-    prefix: { type: String, required: true, enum: ["Mr", "Mrs", "Ms", "Dr"] },
-    name: { type: String, required: true },
-    surname: { type: String, required: true },
-    email: { type: String, required: true },
+    // Organisation Information
+    organisationName: { type: String, required: true },
+    entityType: {
+      type: String,
+      enum: ["SME", "Corporate Organisation", "Government Agency", "Other"],
+      required: true,
+    },
+    contactPerson: { type: String, required: true }, // full name of contact person
+    designation: { type: String, required: true }, // role of the contact person
+    officeAddress: { type: String, required: true },
     phone: { type: String, required: true },
+    email: { type: String, required: true },
+    website: { type: String }, // optional
 
     // Course Info
     courseId: { type: String, required: true },

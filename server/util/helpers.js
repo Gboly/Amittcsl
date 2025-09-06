@@ -170,11 +170,14 @@ export const setFadApplicationData = (formData) => ({
 export function setCoursesApplicationData(formData) {
   // Base applicant info
   const baseData = {
-    prefix: formData.prefix,
-    name: formData.name,
-    surname: formData.surname,
-    email: formData.email,
+    organisationName: formData.organisationName,
+    entityType: formData.entityType,
+    contactPerson: formData.contactPerson,
+    designation: formData.designation,
+    officeAddress: formData.officeAddress,
     phone: formData.phone,
+    email: formData.email,
+    website: formData.website,
     courseId: formData.courseId,
     courseTitle: formData.selectedCourse,
     customMessage: formData.customMessage || "",

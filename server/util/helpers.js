@@ -10,6 +10,7 @@ import { feeApplicationTemplate } from "../email-templates/feeApplication.js";
 import { fadApplicationTemplate } from "../email-templates/fadApplication.js";
 import { coursesApplicationTemplate } from "../email-templates/coursesApplication.js";
 import { contactTemplate } from "../email-templates/contact.js";
+import { travelApplicationTemplate } from "../email-templates/travelApplication.js";
 
 // Register an in-memory Handlebars instance
 const hbs = exphbs.create({});
@@ -23,6 +24,7 @@ const templates = {
   feeApplication: feeApplicationTemplate,
   fadApplication: fadApplicationTemplate,
   coursesApplication: coursesApplicationTemplate,
+  travelApplication: travelApplicationTemplate,
 };
 export const sendApplicationEmail = async (formData, type, template) => {
   const source = templates[template];
@@ -292,3 +294,84 @@ export const setFsCoursesData = (formData) => {
 
   return courseData;
 };
+
+// utils/mapBookingPayload.js
+const toInt = (v) => (v === "" || v == null ? undefined : parseInt(v, 10));
+const toNum = (v) => (v === "" || v == null ? undefined : Number(v));
+const splitCSV = (v) =>
+  Array.isArray(v)
+    ? v
+    : typeof v === "string"
+    ? v
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : [];
+
+export function setTravelApplicationData(b = {}) {
+  return {
+    contact: {
+      firstName: b.firstName?.trim(),
+      lastName: b.lastName?.trim(),
+      email: b.email?.trim(),
+      phone: b.phone?.trim(),
+      countryOfResidence: b.countryOfResidence?.trim(),
+      preferredContact: b.preferredContact || "email",
+    },
+    group: {
+      groupName: b.groupName?.trim(),
+      travellersTotal: toInt(b.travellersTotal),
+      adults: toInt(b.adults),
+      teens: toInt(b.teens) || 0,
+      children: toInt(b.children) || 0,
+      purpose: b.purpose || "family",
+    },
+    trip: {
+      destinationCountry: b.destinationCountry,
+      citiesPreferred: splitCSV(b.citiesPreferred),
+      startDate: b.startDate ? new Date(b.startDate) : undefined,
+      endDate: b.endDate ? new Date(b.endDate) : undefined,
+      departureCity: b.departureCity?.trim(),
+      departureCountry: b.departureCountry?.trim(),
+      // tripNights/leadTimeDays/rushBooking are computed in schema
+    },
+    transport: {
+      flightsNeeded: b.flightsNeeded, // "yes" | "no"
+      localTransfers: b.localTransfers, // "yes" | "no"
+    },
+    stay: {
+      accommodationTier: b.accommodationTier, // "3★" | "4★" | ...
+      roomingSetup: b.roomingSetup?.trim(),
+      privateChef: b.privateChef || "no",
+      mealPlan: b.mealPlan, // "BB" | "HB" | "FB" (full labels from UI)
+      dietaryNeeds: b.dietaryNeeds?.trim(),
+    },
+    experiences: {
+      attractionsNG: b.attractionsNG || [],
+      attractionsGH: b.attractionsGH || [],
+      entertainmentPrefs: b.entertainmentPrefs || [],
+      otherAttractions: b.otherAttractions?.trim(),
+    },
+    logistics: {
+      mobilityNeeds: b.mobilityNeeds?.trim(),
+      medicalNotes: b.medicalNotes?.trim(),
+      visaSupportNeeded: b.visaSupportNeeded || "no",
+      nationality: b.nationality?.trim(),
+      preferredLanguage: b.preferredLanguage || "English",
+      contentCaptureConsent: b.contentCaptureConsent || "no",
+    },
+    budget: {
+      currency: b.currency || "USD",
+      budgetMin: toNum(b.budgetMin),
+      budgetMax: toNum(b.budgetMax),
+      paymentPreference: b.paymentPreference || "bank-transfer",
+      referral: b.referral?.trim(),
+    },
+    consent: {
+      agreeToTerms: !!b.agreeToTerms,
+      marketingOptIn: !!b.marketingOptIn,
+    },
+    messageToPlanner: b.messageToPlanner?.trim(),
+    // derived flags computed by schema pre('validate')
+  };
+}

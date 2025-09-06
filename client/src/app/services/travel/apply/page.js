@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import "./page.css";
 import useSubmitGuard from "@/utils/helper";
+import { useCreateTravelApplicationMutation } from "@/features/api/applicationApi";
 
 const DEST_OPTIONS = [
   { value: "nigeria", label: "Nigeria" },
@@ -99,9 +100,9 @@ const INIT = {
 export default function BookingApplyPage() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState(INIT);
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [serverMsg, setServerMsg] = useState("");
+
+  const [submit, { isLoading: submitting, data: submittedData }] =
+    useCreateTravelApplicationMutation();
 
   // Derived values
   const todayISO = useMemo(() => new Date().toISOString().slice(0, 10), []);
@@ -124,7 +125,10 @@ export default function BookingApplyPage() {
   const rushBooking = leadTimeDays > 0 && leadTimeDays < 60;
 
   // after tripNights, leadTimeDays, rushBooking, etc.
-  const { submitErrors, canSubmit } = useSubmitGuard(data, tripNights);
+  const { submitErrors: serverMsg, canSubmit } = useSubmitGuard(
+    data,
+    tripNights
+  );
 
   // Step validation
   const errors = useMemo(() => {
@@ -186,49 +190,10 @@ export default function BookingApplyPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // final guard
-    if (tripNights < 7) {
-      setServerMsg("Trip must be at least 7 nights.");
-      return;
-    }
-    if (Number(data.travellersTotal || 0) < 10) {
-      setServerMsg("Minimum group size is 10.");
-      return;
-    }
-    setServerMsg("");
-    setSubmitting(true);
-    try {
-      const payload = {
-        ...data,
-        derived: {
-          tripNights,
-          leadTimeDays,
-          rushBooking,
-          meetsMinGroup: Number(data.travellersTotal || 0) >= 10,
-          meetsMinNights: tripNights >= 7,
-        },
-      };
-
-      const res = await fetch("/api/booking/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        const j = await res.json().catch(() => ({}));
-        throw new Error(j?.message || "Failed to submit application.");
-      }
-
-      setSubmitted(true);
-    } catch (err) {
-      setServerMsg(err.message);
-    } finally {
-      setSubmitting(false);
-    }
+    canSubmit && submit(data);
   };
 
-  if (submitted) {
+  if (submittedData) {
     return (
       <main className="apply-page">
         <section className="apply-card success">
@@ -740,7 +705,7 @@ export default function BookingApplyPage() {
 
         {/* Footer Actions */}
         <footer className="apply-footer">
-          {serverMsg && <div className="error server">{serverMsg}</div>}
+          {serverMsg && <div className="error server">{serverMsg[0]}</div>}
           <div className="actions">
             <button
               type="button"

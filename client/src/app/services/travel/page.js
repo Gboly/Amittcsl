@@ -23,6 +23,7 @@ import NightlifeIcon from "@mui/icons-material/Nightlife";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 import MuseumIcon from "@mui/icons-material/Museum";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import Link from "next/link";
 
 export default function TravelPage() {
   return (
@@ -48,8 +49,10 @@ export default function TravelPage() {
             entertainment.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">Book Your Group Package</button>
-            <button className="btn-secondary">View Upcoming Trips</button>
+            <Link href="\services\travel\apply">
+              <button className="btn-primary">Book Your Group Package</button>
+            </Link>
+            {/* <button className="btn-secondary">View Upcoming Trips</button> */}
           </div>
         </div>
       </section>
@@ -316,10 +319,9 @@ export default function TravelPage() {
             • Phone: <a href="tel:+2349046126671">+234-9046126671</a>
           </p>
           <div className="hero-buttons" style={{ justifyContent: "center" }}>
-            <button className="btn-primary">Start a Booking</button>
-            <button className="btn-secondary">
-              Request a Custom Itinerary
-            </button>
+            <Link href="\services\travel\apply">
+              <button className="btn-primary">Book Your Trip</button>
+            </Link>
           </div>
         </div>
       </section>

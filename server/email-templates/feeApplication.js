@@ -157,41 +157,53 @@ export const feeApplicationTemplate = `<html lang="en">
           <p class="sub">A new application has been submitted.</p>
         </div>
         <div class="content">
-          <h2 class="section-title">Applicant Bio</h2>
-          <table class="kvs">
-            <tr>
-              <th>First Name</th>
-              <td>{{firstName}}</td>
-            </tr>
-            <tr>
-              <th>Last Name</th>
-              <td>{{lastName}}</td>
-            </tr>
-            <tr>
-              <th>Email</th>
-              <td>{{email}}</td>
-            </tr>
-            <tr>
-              <th>Phone Number</th>
-              <td>{{phone}}</td>
-            </tr>
-            <tr>
-              <th>Country</th>
-              <td>{{country}}</td>
-            </tr>
-            <tr>
-              <th>City</th>
-              <td>{{city}}</td>
-            </tr>
-            <tr>
-              <th>Age Range</th>
-              <td>{{ageRange}}</td>
-            </tr>
-            <tr>
-              <th>Occupation</th>
-              <td>{{occupation}}</td>
-            </tr>
-          </table>
+            <p class="section-title">Organisation Summary</p>
+            <table class="kvs" role="presentation">
+              <tr>
+                <th>Organisation / Business</th>
+                <td>{{organisationName}}</td>
+              </tr>
+              <tr>
+                <th>Entity Type</th>
+                <td>{{entityType}}</td>
+              </tr>
+              <tr>
+                <th>Contact Person</th>
+                <td>{{contactPerson}}</td>
+              </tr>
+              <tr>
+                <th>Designation / Role</th>
+                <td>{{designation}}</td>
+              </tr>
+              <tr>
+                <th>Office Address</th>
+                <td>{{officeAddress}}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td><a href="mailto:{{email}}">{{email}}</a></td>
+              </tr>
+              <tr>
+                <th>Phone</th>
+                <td><a href="tel:{{phone}}">{{phone}}</a></td>
+              </tr>
+              {{#if website}}
+              <tr>
+                <th>Website</th>
+                <td><a href="{{website}}">{{website}}</a></td>
+              </tr>
+              {{/if}}
+              <tr>
+                <th>Declaration</th>
+                <td>
+                  {{#if declarationConfirmed}}
+                    <span class="pill pill-yes">✓ Confirmed</span>
+                  {{else}}
+                    <span class="pill pill-no">✗ Not confirmed</span>
+                  {{/if}}
+                </td>
+              </tr>
+            </table>
 
           <h2 class="section-title">Program Details</h2>
           <table class="kvs">

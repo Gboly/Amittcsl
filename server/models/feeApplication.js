@@ -1,40 +1,19 @@
 import mongoose from "mongoose";
 
 const applicationSchema = new mongoose.Schema({
-  firstName: {
+  // Organisation Information
+  organisationName: { type: String, required: true },
+  entityType: {
     type: String,
+    enum: ["SME", "Corporate Organisation", "Government Agency", "Other"],
     required: true,
   },
-  lastName: {
-    type: String,
-    default: "",
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  phone: {
-    type: String,
-    required: true,
-  },
-  country: {
-    type: String,
-    required: true,
-    enum: ["Nigeria", "USA", "UK"], // You can add more countries if necessary
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  ageRange: {
-    type: String,
-    enum: ["Under 18", "18–24", "25–34", "35–44", "45–54", "55+"],
-    default: "",
-  },
-  occupation: {
-    type: String,
-    default: "",
-  },
+  contactPerson: { type: String, required: true }, // full name of contact person
+  designation: { type: String, required: true }, // role of the contact person
+  officeAddress: { type: String, required: true },
+  phone: { type: String, required: true },
+  email: { type: String, required: true },
+  website: { type: String }, // optional
   mainGoal: {
     type: String,
     enum: [

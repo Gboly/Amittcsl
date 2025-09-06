@@ -1,6 +1,7 @@
 .fee-apply {
     width: 100%;
     background: #fafcff;
+    padding: 2rem 1rem 3rem;
 }
 .application-container {
   max-width: 900px;
@@ -26,7 +27,7 @@
 }
 
 form h2 {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: #0a2540;

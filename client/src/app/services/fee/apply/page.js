@@ -36,7 +36,8 @@ const courseFields = [
 
 const ApplicationPage = () => {
   const [formData, setFormData] = useState({});
-  const [submit, { data: submittedData }] = useCreateFeeApplicationMutation();
+  const [submit, { isLoading, data: submittedData }] =
+    useCreateFeeApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -213,7 +214,7 @@ const ApplicationPage = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

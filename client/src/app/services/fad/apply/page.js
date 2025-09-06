@@ -75,7 +75,8 @@ const services = {
 
 const ApplicationPage = () => {
   const [formData, setFormData] = useState({});
-  const [submit, { data: submittedData }] = useCreateFadApplicationMutation();
+  const [submit, { isLoading, data: submittedData }] =
+    useCreateFadApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -387,7 +388,7 @@ const ApplicationPage = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

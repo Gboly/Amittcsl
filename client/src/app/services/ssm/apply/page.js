@@ -8,7 +8,8 @@ import { useCreateSsmApplicationMutation } from "@/features/api/applicationApi";
 
 const ApplicationPage = () => {
   const [formData, setFormData] = useState({});
-  const [submit, { data: submittedData }] = useCreateSsmApplicationMutation();
+  const [submit, { isLoading, data: submittedData }] =
+    useCreateSsmApplicationMutation();
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -202,7 +203,7 @@ const ApplicationPage = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

@@ -72,7 +72,7 @@ const ApplicationPage = () => {
   const [formData, setFormData] = useState({});
   //const [customMessage, setCustomMessage] = useState("");
 
-  const [submit, { isLoading: savingProgress, data: submittedData }] =
+  const [submit, { isLoading, data: submittedData }] =
     useCreateSppApplicationMutation();
 
   const handleChange = (field, value) => {
@@ -388,7 +388,7 @@ const ApplicationPage = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

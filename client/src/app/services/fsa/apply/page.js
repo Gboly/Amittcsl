@@ -11,7 +11,8 @@ const ApplicationPage = () => {
   const [course, setCourse] = useState(null);
   const [formData, setFormData] = useState({});
 
-  const [submit, { data: submittedData }] = useCreateFsApplicationMutation();
+  const [submit, { isLoading, data: submittedData }] =
+    useCreateFsApplicationMutation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -208,7 +209,7 @@ const ApplicationPage = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

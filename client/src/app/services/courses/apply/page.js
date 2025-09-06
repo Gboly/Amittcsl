@@ -12,7 +12,7 @@ const ApplicationPage = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedCourseId, setCourseId] = useState(null);
 
-  const [submit, { data: submittedData }] =
+  const [submit, { isLoading, data: submittedData }] =
     useCreateCoursesApplicationMutation();
 
   useEffect(() => {
@@ -195,7 +195,7 @@ const ApplicationPage = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Application
+            {isLoading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

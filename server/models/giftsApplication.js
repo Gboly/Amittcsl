@@ -2,11 +2,19 @@ import mongoose from "mongoose";
 
 // Define the schema for the application form
 const giftsApplicationSchema = new mongoose.Schema({
-  prefix: { type: String, required: true },
-  name: { type: String, required: true },
-  surname: { type: String },
-  email: { type: String, required: true },
+  // Organisation Information
+  organisationName: { type: String, required: true },
+  entityType: {
+    type: String,
+    enum: ["SME", "Corporate Organisation", "Government Agency", "Other"],
+    required: true,
+  },
+  contactPerson: { type: String, required: true }, // full name of contact person
+  designation: { type: String, required: true }, // role of the contact person
+  officeAddress: { type: String, required: true },
   phone: { type: String, required: true },
+  email: { type: String, required: true },
+  website: { type: String }, // optional
   serviceFestive: { type: Boolean, default: false },
   serviceMilestone: { type: Boolean, default: false },
   serviceBirthday: { type: Boolean, default: false },

@@ -1,4 +1,4 @@
-import TravelApplication from "../models/coursesApplication.js";
+import TravelApplication from "../models/travelApplication.js";
 import {
   sendApplicationEmail,
   setTravelApplicationData,

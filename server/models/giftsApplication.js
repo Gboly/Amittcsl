@@ -17,7 +17,7 @@ const giftsApplicationSchema = new mongoose.Schema({
   website: { type: String }, // optional
   serviceFestive: { type: Boolean, default: false },
   serviceMilestone: { type: Boolean, default: false },
-  serviceBirthday: { type: Boolean, default: false },
+  serviceStaffAppreciation: { type: Boolean, default: false },
   serviceHampers: { type: Boolean, default: false },
   occasion: { type: String },
   preferredGiftType: { type: String },

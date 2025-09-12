@@ -193,16 +193,6 @@ export const feeApplicationTemplate = `<html lang="en">
                 <td><a href="{{website}}">{{website}}</a></td>
               </tr>
               {{/if}}
-              <tr>
-                <th>Declaration</th>
-                <td>
-                  {{#if declarationConfirmed}}
-                    <span class="pill pill-yes">✓ Confirmed</span>
-                  {{else}}
-                    <span class="pill pill-no">✗ Not confirmed</span>
-                  {{/if}}
-                </td>
-              </tr>
             </table>
 
           <h2 class="section-title">Program Details</h2>

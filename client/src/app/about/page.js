@@ -12,13 +12,14 @@ export default function AboutPage() {
         </div>
         <div className="about-hero-text">
           <p>
-            It all started with a simple observation: many individuals,
-            especially young professionals and aspiring entrepreneurs, had the
-            passion and drive to succeed but lacked access to the right
-            knowledge, tools, or networks to move forward. Whether it was poor
-            financial decisions, underdeveloped customer service teams, or
-            brilliant startup ideas stuck without funding, the gap between
-            potential and progress was painfully clear.
+            It all started with a simple observation: many individuals/group,
+            young professionals, SME, aspiring entrepreneurs and Organisations,
+            had the passion and drive to succeed but sometimes have inadequate
+            access to the right knowledge, tools, or networks to achieve their
+            vision succesfully.Whether it was professional courses, Financial
+            empowerment, Financial Advisory, underdeveloped customer service
+            teams, Supplies & Procurement, Corporate Gifts and Travel &Tours etc
+            the gap between potential and progress was painfully clear.
           </p>
 
           <p>We saw an opportunity to bridge that gap.</p>
@@ -26,16 +27,15 @@ export default function AboutPage() {
           <p>
             Amitt Training and Consulting Services Limited was founded to be
             more than just a training or consulting firm, we set out to become a
-            partner in growth. From helping young adults navigate independence
-            through life-skill courses, to supporting companies in building
-            stronger teams, and guiding startup founders through the
-            complexities of venture capital. Our work is rooted in real needs,
-            real people, and real change.
+            partner in growth, from helping individuals/group, SME, Startup,
+            Organisations etc Supporting companies in building stronger teams
+            and guiding through the complexities of achieving their goals. Our
+            work is rooted in real needs, real people, and real change.
           </p>
 
           <p>
             {`Every service we offer is a direct response to a challenge we've seen
-          and helped solve. And every solution we build is designed to empower
+          and helped solve. Every solution we build is designed to empower
           people not just for today, but for the long haul.`}
           </p>
         </div>

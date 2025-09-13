@@ -363,7 +363,7 @@ export const fsCoursesApplication = {
           "Budgeting, saving & credit basics",
           "Goal setting & accountability",
           "Communication & problem-solving",
-          "Building self-identity and legacy",
+          "Building self-identity",
         ],
       },
       {

@@ -195,7 +195,7 @@ export default function BookingApplyPage() {
 
   if (submittedData) {
     return (
-      <main className="apply-page">
+      <main className="apply-page-success">
         <section className="apply-card success">
           <h1>Application Received 🎉</h1>
           <p>

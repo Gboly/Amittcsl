@@ -67,3 +67,7 @@
 .disabled {
     opacity: 0.5;
 }
+
+.apply-page-success{
+    height: 85svh
+}

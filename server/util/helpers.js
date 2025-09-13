@@ -38,7 +38,7 @@ export const sendApplicationEmail = async (formData, type, template) => {
 
   const mailOptions = {
     from: '"Amittcsl Dev" <dev@amittcsl.com>', // Your email address
-    to: "dev@amittcsl.com", // Recipient's email address
+    to: "info@amittcsl.com", // Recipient's email address
     subject: `New Application Submitted: ${type}`,
     html,
   };

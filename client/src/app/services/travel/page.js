@@ -148,10 +148,12 @@ export default function TravelPage() {
                 (Nigeria)
               </li>
               <li>
-                <BeachAccessIcon /> Private Beaches (Nigeria &amp; Ghana)
+                <BeachAccessIcon /> Landmark Beach • Oniru Private Beach
+                (Nigeria)
               </li>
               <li>
-                <LocationOnIcon /> Labadi Beach • Jamestown Lighthouse (Ghana)
+                <LocationOnIcon /> Tarkwa Bay Beach • Lagos Harbour Lighthouse
+                (Nigeria)
               </li>
               <li>
                 <CheckCircleIcon /> …and other hidden gems

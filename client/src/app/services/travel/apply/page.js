@@ -7,8 +7,8 @@ import { useCreateTravelApplicationMutation } from "@/features/api/applicationAp
 
 const DEST_OPTIONS = [
   { value: "nigeria", label: "Nigeria" },
-  { value: "ghana", label: "Ghana" },
-  { value: "both", label: "Nigeria & Ghana" },
+  // { value: "ghana", label: "Ghana" },
+  // { value: "both", label: "Nigeria & Ghana" },
   { value: "other", label: "Other (West Africa)" },
 ];
 

@@ -53,7 +53,7 @@ export default function CorporateGiftsPage() {
           </div>
           <div className="image">
             <Image
-              src="/gift.jpg"
+              src="/corporate-gifts.jpg"
               alt="Corporate Gifts"
               width={400}
               height={400}

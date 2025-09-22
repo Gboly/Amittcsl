@@ -2,7 +2,8 @@ export const services = [
   {
     title: "Financial Academy",
     image:
-      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088973/Amitt/fsa_mghjft.png",
+      // "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088973/Amitt/fsa_mghjft.png",
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1758570584/Amitt/financial-academy_gummun.jpg",
     desc: "The Financial Academy contains transformative courses designed to equip you with practical financial skills and personal growth strategies. These courses helps you feel confident, capable, and committed to your financial goals.",
     link: "/services/fsa",
   },
@@ -30,7 +31,8 @@ export const services = [
   {
     title: "Professional Courses",
     image:
-      "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088970/Amitt/courses_jrpkl5.png",
+      // "https://res.cloudinary.com/dirwr8cde/image/upload/v1754088970/Amitt/courses_jrpkl5.png",
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1758570583/Amitt/professional-courses_njpwtf.jpg",
     desc: "We offer a range of practical and impactful courses, including The Money Playbook, Introduction to Team Leadership, and Leaving Home, designed to equip participants with essential life skills, financial know-how, and leadership capabilities for personal and professional growth.",
     link: "/services/courses",
   },
@@ -51,7 +53,8 @@ export const services = [
   {
     title: "Corporate gifts",
     image:
-      "https://res.cloudinary.com/dirwr8cde/image/upload/v1756412965/Amitt/gift_ansp09.jpg",
+      // "https://res.cloudinary.com/dirwr8cde/image/upload/v1756412965/Amitt/gift_ansp09.jpg",k
+      "https://res.cloudinary.com/dirwr8cde/image/upload/v1758570586/Amitt/corporate-gifts_de1fce.jpg", 
     desc: "We help organizations strengthen relationships and foster a culture of appreciation through thoughtful and tailored gifting solutions. Whether it’s Christmas, New Year, Sallah, Anniversaries, or Company milestones, our curated gifts leave a lasting impression.",
     link: "/services/gifts",
   },

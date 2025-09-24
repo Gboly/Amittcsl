@@ -225,14 +225,14 @@ export default function FinancialAdvisoryPage() {
         </div>
 
         <div className="case-right">
-          <div className="kpi-card">
+          {/* <div className="kpi-card">
             <span className="kpi-label">Capital Deployed (Phase I)</span>
             <span className="kpi-value">£250M</span>
             <div className="kpi-track">
               <div className="kpi-fill" style={{ width: "80%" }} />
             </div>
             <span className="kpi-footnote">Target Programme: £310M</span>
-          </div>
+          </div> */}
 
           <div className="case-art">
             <Image
